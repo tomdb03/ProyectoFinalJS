@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>RopaTuya</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="./images/logo.jpg" alt="Logo de la página RopaTuya">
+            <div>RopaTuya</div>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h1>Inicio</h1>
+            <h2>Calcula el importe final de lo que te vas a llevar a partir de la cantidad de cuotas en las que pagues.
+            </h2>
+            <form action="">
+                <div>
+                    <label for="precioLista">Precio de lista
+                        <input type="text" placeholder="Ingrese el precio de lista total" id="precioLista">
+                    </label>
+                </div>
+                <div>
+                    <label for="coutas">Cuotas
+                        <input type="text" placeholder="Ingrese las cuotas en las que vas a pagar" id="coutas">
+                    </label>
+                </div>
+                <div>
+                    <label for="interes">Porcentaje de interés
+                        <input type="text" placeholder="Ingrese el interés en porcentaje" id="interes">
+                    </label>
+                </div>
+                <div>
+                    <button type="reset">Limpiar</button>
+                    <button type="submit">Calcular</button>
+                </div>
+            </form>
+            <div>
+                Monto de cada cuota:
+            </div>
+            <div>
+                Monto final:
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Creado por <span>Tomás Dalla Bona</span>. Estudiante de <a href="https://www.coderhouse.com/">Coderhouse</a>.
+        </p>
+    </footer>
+</body>
+<script src="./js/main.js"></script>
+
+</html>
