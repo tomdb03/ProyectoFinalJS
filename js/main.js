@@ -57,7 +57,56 @@ console.log(arrayPeliculas);
 
 
 
-/* tengo que hacer que el precio de lista sea una sumatoria de los precios de las películas seleccionadas */
+/* tengo que hacer que el precio de lista sea una sumatoria de los precios de las películas seleccionadas (algo así:)*/
+
+// function sumarPeliculas(primerPeli, ultimaPeli) {
+//     let total = 0;
+//     for (let i = primerPeli; i <= ultimaPeli; i++) {
+//         total += i;
+//     }
+//     return (total);
+// }
+// console.log(sumarPeliculas(,));
+
+
+
+/* filtros */
+
+// const porPrecioTrece = arrayPeliculas.filter((el) => el.precio == 13);
+// console.log(porPrecioTrece);
+
+// const porPrecioDiez = arrayPeliculas.filter((el) => el.precio == 10);
+// console.log(porPrecioDiez);
+
+// const porPrecioSiete = arrayPeliculas.filter((el) => el.precio == 7);
+// console.log(porPrecioSiete);
+
+
+// const porGenero = arrayPeliculas.filter((el) => el.genero. );
+// console.log(porGenero);
+
+
+
+/* ordenar */
+
+
+
+/* mostrar solo los nombres de las peliculas */
+
+// const nombresPeliculas = arrayPeliculas.map((el) => el.nombre);
+// console.log(nombresPeliculas);
+
+
+
+/* ¿No sabés que elegir? Proba cuál te toca al azar. */
+
+// peliAzar = () => {
+//     return Math.random( );       /* por su índice abría que hacerlo */
+// }
+// console.log(peliAzar);          /* está mal */
+
+
+
 
 function calcular() {
     let precioLista = parseInt(prompt("Ingrese el precio de lista total"));
@@ -88,3 +137,7 @@ function calcular() {
 calcular();
 
 /* Me falta para la próxima entrega sincronizar ambas cosas (el descuento por transferencia por ejemplo), aunque no se me ocurre muy bien cómo */
+
+
+let peliculas = document.getElementsByClassName("peliTit");
+console.log(peliculas);
