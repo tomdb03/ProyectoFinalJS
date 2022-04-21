@@ -1,0 +1,65 @@
+/* películas */
+
+.peliculasContainer {
+    padding: 25px 5px 30px 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-items: center;
+    @extend %contenedorNegro;
+
+    .peli {
+        padding: 15px 0;
+        @include flex(inherit, center);
+        flex-direction: column;
+
+        .peliImg {
+            @extend %img;
+            height: 170px;
+            width: 120px;
+            border: solid 3px $colorBlanco;
+            border-radius: 8px;
+
+            &:hover {
+                box-shadow: $boxShadowBlanca;
+            }
+        }
+
+        .peliBody {
+            @include flex(inherit, center);
+            flex-direction: column;
+            width: 120%;
+            padding: 7px;
+
+            .peliTit {
+                font-size: large;
+                letter-spacing: 1px;
+                text-align: center;
+                padding: 3px;
+                margin-bottom: 0;
+                font-weight: bold;
+                line-height: inherit;
+                color: $colorBlanco;
+            }
+
+            .peliGenAn {
+                font-size: medium;
+                padding: 3px;
+                color: $colorBlanco;
+            }
+
+            .peliBts {
+                padding: 3px;
+                display: flex;
+                flex-direction: row;
+
+                .peliBoton {
+                    padding: 5px;
+                    font-size: small;
+                    @extend %botones;
+                }
+            }
+        }
+    }
+}

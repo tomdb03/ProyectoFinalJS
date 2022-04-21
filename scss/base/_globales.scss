@@ -1,0 +1,114 @@
+/* globales */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*Google Fonts*/
+
+// :root{
+//     --primario: #B81D24;
+//     --secundario: #E50914;
+//     --blanco: #F5F5F1;
+//     --negrohf: #221F1F;
+//     --negro: #000;
+// }
+
+$colorPrimario: #B81D24;
+$colorSecundario: #E50914;
+$colorBlanco: #F5F5F1;
+$colorNegroHF: #221F1F;
+$colorNegro: #000;
+
+$boxShadowClara: 1px 1px 3px 2px $colorNegroHF;
+$boxShadowOscura: 0px 10px 10px rgba(0, 0, 0, 0.8);
+$boxShadowBlanca: 0px 1px 4px $colorBlanco;
+
+$fondoDegradado: linear-gradient(-45deg, $colorNegroHF 0%, $colorPrimario 50%, $colorSecundario 100%);
+$fondoNegro: linear-gradient(top, $colorNegroHF, $colorNegro);
+
+* {
+    margin: 0;
+    padding: 0;
+    /*Reset*/
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: $colorPrimario;
+    line-height: inherit;
+    color: inherit;
+
+    .containercss {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "header"
+            "main"
+            "footer";
+
+        main {
+            grid-area: main;
+            margin-left: 10%;
+            margin-right: 10%;
+
+            h1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 35%;
+                font-weight: 600;
+                font-size: 23px;
+                color: $colorBlanco;
+                background-color: $colorSecundario;
+                border: 4px solid $colorBlanco;
+                border-radius: 6px;
+                padding: 10px;
+                margin: 35px auto 20px auto;
+                transition: all 2s ease;
+
+                &:hover {
+                    box-shadow: $boxShadowClara;
+                    transform: translate(5px, 0px);
+                }
+            }
+
+            .parrafoDescriptivo {
+                color: $colorBlanco;
+                text-align: center;
+                padding: 8px;
+                font-size: large;
+                margin-bottom: 13px;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+        }
+    }
+}
+
+h3 {
+    font-size: inherit;
+    font-weight: bold;
+}
+
+ul {
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        color: $colorBlanco !important;
+        font-weight: bold;
+    }
+}
+
+.fgrow {
+    flex-grow: 0;
+}

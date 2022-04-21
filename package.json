@@ -1,0 +1,21 @@
+{
+  "name": "dalla-bona-javascript-simuladorinteractivo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run buid-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomdb03/ProyectoFinalJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomdb03/ProyectoFinalJS/issues"
+  },
+  "homepage": "https://github.com/tomdb03/ProyectoFinalJS#readme"
+}

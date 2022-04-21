@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Las Pelis de Siempre es una tienda virtual y física de películas que ofrece venta y alquiler de películas de todas las épocas. ¡Revisa nuestras cosas!">
+    <meta name="keywords" content="HTML, CSS, Bootstrap, SASS, responsive, comprar, alquilar, peliculas, carrito">
+    <meta name="author" content="Tomás Dalla Bona">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Las Pelis de Siempre - Carrito</title>
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="containercss">
+        <header>
+            <nav
+                class="navbar navbar-expand-lg navbar-light navbarToggleExternalContent justify-content-between pt-0 pb-0">
+                <a class="refLogo navbar-brand nav-img" href='../index.html'>
+                    <img class="logo" src="../images/logo.png" alt="Logo de la página Las Pelis de Siempre"></a>
+                <button class="navbar-toggler" id="botonNavbar" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-expanded="false" aria-controls="navbarNav"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse fgrow" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./peliculas.html">Películas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./carrito.html">Carrito</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Barra de navegación comprimida-->
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="navbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./peliculas.html">Películas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./carrito.html">Carrito</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="containercss">
+                <h1>Carrito</h1>
+                <h2 class="parrafoDescriptivo">Confirmá tu compra.</h2>
+                <form class="carritoContainer">
+                    <div class="campos">
+                        <label for="articulos">Artículos en el carrito:</label>
+                        <label for="precioLista">Precio de lista total:</label>
+                        <label for="coutas">Cuotas:
+                            <input class="inputCarrito" type="text" placeholder="Ingrese las cuotas en las que vas a pagar" id="coutas">
+                        </label>
+                        <label for="interes">Porcentaje de interés:</label>
+                        <label for="transferencia">¿Desea pagar con transferencia para un 20% de descuento?
+                            <input type="checkbox" name="transferencia" id="transferencia">
+                        </label>
+                    </div>
+                    <div class="containerBotones">
+                        <button class="botones" type="reset">Limpiar</button>
+                        <button class="botones" type="submit">Calcular</button>
+                    </div>
+                    <div class="montos">
+                        <label for="montoCC">Monto de cada cuota:</label>
+                        <label for="montoFinal">Monto final:</label>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <a href="https://api.whatsapp.com/send?phone=0123456789" class="btn-wsp" target="_blank">
+                <i class="fa fa-whatsapp icono"></i>
+            </a>
+            <div class="txtFooter">
+                <p>Creado por <span class="negrita">Tom&aacute;s Dalla Bona</span>. Estudiante de <a class="linkCoder"
+                        href="https://www.coderhouse.com/">Coderhouse</a>.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+</body>
+<script src="../js/main.js"></script>
+
+</html>

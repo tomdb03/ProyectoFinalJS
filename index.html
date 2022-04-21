@@ -5,55 +5,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Las Pelis de Siempre es una tienda virtual y física de películas que ofrece venta y alquiler de películas de todas las épocas. ¡Revisa nuestras cosas!">
+    <meta name="keywords" content="HTML, CSS, Bootstrap, SASS, responsive, comprar, alquilar, peliculas, inicio">
+    <meta name="author" content="Tomás Dalla Bona">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-    <title>RopaTuya</title>
+    <title>Las Pelis de Siempre - Inicio</title>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <img class="logo" src="./images/logo.jpg" alt="Logo de la página RopaTuya">
-            <div>RopaTuya</div>
-        </nav>
-    </header>
-    <main>
-        <div>
+    <div class="containercss">
+        <header>
+            <nav
+                class="navbar navbar-expand-lg navbar-light navbarToggleExternalContent justify-content-between pt-0 pb-0">
+                <a class="refLogo navbar-brand nav-img" href='./index.html'>
+                    <img class="logo" src="./images/logo.png" alt="Logo de la página Las Pelis de Siempre"></a>
+                <button class="navbar-toggler" id="botonNavbar" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-expanded="false" aria-controls="navbarNav"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse fgrow" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/peliculas.html">Películas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/carrito.html">Carrito</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Barra de navegación comprimida-->
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="navbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./pages/peliculas.html">Películas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./pages/carrito.html">Carrito</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
             <h1>Inicio</h1>
-            <h2>Calcula el importe final de lo que te vas a llevar a partir de la cantidad de cuotas en las que pagues.
-            </h2>
-            <form action="">
-                <div>
-                    <label for="precioLista">Precio de lista
-                        <input type="text" placeholder="Ingrese el precio de lista total" id="precioLista">
-                    </label>
+            <h2 class="subtituloInicio">Las Pelis de Siempre, una tienda única para lo que necesites sobre
+                películas.</h2>
+            <div class="preguntasFrecuentes">
+                <h3 id="pfTit">Preguntas frecuentes</h3>
+                <div class="pregunta">
+                    <h3>¿Quiénes somos?</h2>
+                        <p class="respuesta">Somos una tienda física y online de películas. Con nosotros podés
+                            comprar o alquilar
+                            películas de
+                            todo tipo y época.</p>
                 </div>
-                <div>
-                    <label for="coutas">Cuotas
-                        <input type="text" placeholder="Ingrese las cuotas en las que vas a pagar" id="coutas">
-                    </label>
+                <div class="pregunta">
+                    <h3>¿Cómo contactarnos?</h3>
+                    <p class="respuesta">Podés dejarnos tu mensaje en el contacto y te responderemos inmediatamente,
+                        sino podés
+                        escribirnos al contacto de WhatsApp que te dejamos abajo, o mejor si vas físicamente a la
+                        tienda a elegir lo que quieras.</p>
                 </div>
-                <div>
-                    <label for="interes">Porcentaje de interés
-                        <input type="text" placeholder="Ingrese el interés en porcentaje" id="interes">
-                    </label>
+                <div class="pregunta">
+                    <h3>¿Cómo llega mi pedido?</h3>
+                    <p class="respuesta">En caso de compra a distancia enviamos el pedido por correo, y tarda entre
+                        3 y 5 días habiles
+                        en
+                        llegar a cualquier parte de Argentina.</p>
                 </div>
-                <div>
-                    <button type="reset">Limpiar</button>
-                    <button type="submit">Calcular</button>
+                <div class="pregunta">
+                    <h3>¿Si alquilo, que plazo tengo para devolver una película?</h3>
+                    <p class="respuesta">El plazo se acorda el día de la transacción y puede variar entre uno y
+                        siete días.</p>
                 </div>
-            </form>
-            <div>
-                Monto de cada cuota:
+                <div class="pregunta">
+                    <h3>¿Cuáles son los beneficios al elegirnos?</h2>
+                        <ul class="preguntaLista">
+                            <li>Excelente atención</li>
+                            <li>Calidad premium</li>
+                            <li>Gran variedad y stock</li>
+                            <li>Ofertas imperdibles</li>
+                        </ul>
+                </div>
             </div>
-            <div>
-                Monto final:
+        </main>
+        <footer>
+            <a href="https://api.whatsapp.com/send?phone=0123456789" class="btn-wsp" target="_blank">
+                <i class="fa fa-whatsapp icono"></i>
+            </a>
+            <div class="txtFooter">
+                <p>Creado por <span class="negrita">Tom&aacute;s Dalla Bona</span>. Estudiante de <a class="linkCoder"
+                        href="https://www.coderhouse.com/">Coderhouse</a>.</p>
             </div>
-        </div>
-    </main>
-    <footer>
-        <p>Creado por <span>Tomás Dalla Bona</span>. Estudiante de <a href="https://www.coderhouse.com/">Coderhouse</a>.
-        </p>
-    </footer>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
 <script src="./js/main.js"></script>
 

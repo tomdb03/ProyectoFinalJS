@@ -1,0 +1,57 @@
+/* carrito */
+
+.carritoContainer {
+    @include flex(inherit, center);
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+    margin: 0px auto 0px auto;
+    @extend %contenedorNegro;
+
+    .campos{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 7px;
+
+        label {
+            color: $colorBlanco;
+            font-size: 20px;
+            padding: 6px;
+            .inputCarrito {
+                background-color: $colorBlanco;
+                width: 80%;
+                border: solid 2px $colorSecundario;
+                border-radius: 8px;
+                padding: 2px;
+            }
+        }
+    }
+
+    .containerBotones {
+        @include flex(space-evenly, center);
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+
+        .botones {
+            height: 40px;
+            margin: 10px 0 10px 0;
+            width: 40%;
+            @extend %botones;
+        }
+    }
+
+.montos{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 7px;
+    label{
+        color: $colorBlanco;
+        font-size: 20px;
+        padding: 6px;
+    }
+
+}
+}

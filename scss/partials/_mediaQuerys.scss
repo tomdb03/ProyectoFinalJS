@@ -1,0 +1,54 @@
+/* media querys */
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+
+        h1 {
+            font-size: 19px !important;
+            padding: 6px;
+            margin: 17px auto 11px auto !important;
+        }
+    }
+
+    nav {
+        ul {
+            padding: 4px 0 4px 0;
+        }
+    }
+
+    .btn-wsp {
+        width: 63px;
+        height: 63px;
+        line-height: 66px;
+    }
+
+    .logo {
+        height: 60px;
+        width: 60px;
+    }
+
+    .peliculasContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .carritoContainer {
+        width: 95%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .peliculasContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-wsp {
+        height: 50px;
+        width: 50px;
+        line-height: 53px;
+    }
+
+}

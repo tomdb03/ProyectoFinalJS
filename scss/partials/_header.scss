@@ -1,0 +1,51 @@
+/* header */
+
+header {
+    grid-area: header;
+    background: linear-gradient(top, $colorNegro, $colorNegroHF);;
+    top: 0;
+    width: 100%;
+    padding: 12px;
+    position: sticky;
+    z-index: 1;
+}
+
+nav {
+    padding: 0 12% 0 12%;
+    align-items: center;
+
+    ul {
+        @include flex(inherit, center);
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        li {
+            a {
+                color: $colorSecundario !important;
+                font-size: larger;
+                font-weight: bolder;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+#botonNavbar {
+    color: $colorSecundario;
+    border: solid $colorSecundario;
+    background-color: $colorPrimario;
+}
+
+.logo {
+    height: 75px;
+    width: 75px;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.refLogo {
+    border: none;
+    background-color: transparent;
+}
