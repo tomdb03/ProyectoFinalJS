@@ -1,11 +1,11 @@
 /* index */
 
 .subtituloInicio {
-    @include flex(center,inherit);
-    padding: 15px 5px 15px 5px;
+    @include flex(center, inherit);
+    padding: 20px 15px 20px 15px;
     margin: 35px 0 15px 0;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: bolder;
     color: $colorBlanco;
     border-top: 3px solid $colorSecundario;
     border-bottom: 3px solid $colorSecundario;
@@ -18,17 +18,18 @@
     padding: 15px 15px 0 15px;
 
     #pfTit {
-        color: $colorNegroHF;
+        color: $colorSecundario;
         text-transform: uppercase;
-        font-weight: 800;
-        font-size: 35px;
-        letter-spacing: 6px;
-        text-shadow: 0em 0.1em 0.1em $colorBlanco;
-        text-align: center;
+        font-weight: 600;
+        font-size: 25px;
+        letter-spacing: 3px;
+        text-shadow: 0em 0.01em 0.1em $colorBlanco;
+        padding-top: 20px;
+        padding-left: 31px;
     }
 
     .pregunta {
-        background: $fondoNegro;
+        background: $colorNegro;
         border: solid $colorBlanco;
         border-radius: 8px;
         padding: 20px;

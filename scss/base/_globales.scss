@@ -11,23 +11,22 @@
 //     --negro: #000;
 // }
 
-$colorPrimario: #B81D24;
-$colorSecundario: #E50914;
-$colorBlanco: #F5F5F1;
-$colorNegroHF: #221F1F;
+$colorPrimario: #cb3234;        /* no lo uso */
+$colorSecundario: #b9090b;
+$colorBlanco: #e5e5e5;
+$colorNegroHF: #141414;
 $colorNegro: #000;
+$colorGris: rgb(109, 109, 110);
 
 $boxShadowClara: 1px 1px 3px 2px $colorNegroHF;
 $boxShadowOscura: 0px 10px 10px rgba(0, 0, 0, 0.8);
 $boxShadowBlanca: 0px 1px 4px $colorBlanco;
 
-$fondoDegradado: linear-gradient(-45deg, $colorNegroHF 0%, $colorPrimario 50%, $colorSecundario 100%);
 $fondoNegro: linear-gradient(top, $colorNegroHF, $colorNegro);
 
 * {
     margin: 0;
     padding: 0;
-    /*Reset*/
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
@@ -35,7 +34,8 @@ $fondoNegro: linear-gradient(top, $colorNegroHF, $colorNegro);
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: $colorPrimario;
+    // background-color: $colorPrimario;
+    background-color: $colorNegroHF;
     line-height: inherit;
     color: inherit;
 
@@ -53,26 +53,72 @@ body {
             margin-right: 10%;
 
             h1 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                width: 230px;
+                margin: 23px auto 20px auto;
+                color: $colorSecundario;
+                text-transform: uppercase;
+                font-size: 35px;
+                letter-spacing: 6px;
+                text-shadow: 0em 0.15em 0.15em $colorNegro;
                 text-align: center;
-                width: 35%;
-                font-weight: 600;
-                font-size: 23px;
-                color: $colorBlanco;
-                background-color: $colorSecundario;
-                border: 4px solid $colorBlanco;
-                border-radius: 6px;
-                padding: 10px;
-                margin: 35px auto 20px auto;
-                transition: all 2s ease;
-
-                &:hover {
-                    box-shadow: $boxShadowClara;
-                    transform: translate(5px, 0px);
+                &:hover{
+                    text-shadow: 0em 0.07em 0.07em $colorBlanco;
                 }
             }
+
+            // .parpadea {
+            //     animation-name: parpadeo;
+            //     animation-duration: 3.5s;
+            //     animation-timing-function: linear;
+            //     animation-iteration-count: infinite;
+
+            //     -webkit-animation-name: parpadeo;
+            //     -webkit-animation-duration: 3.5s;
+            //     -webkit-animation-timing-function: linear;
+            //     -webkit-animation-iteration-count: infinite;
+            // }
+
+            // @-moz-keyframes parpadeo {
+            //     0% {
+            //         opacity: 1.0;
+            //     }
+
+            //     50% {
+            //         opacity: 0.0;
+            //     }
+
+            //     100% {
+            //         opacity: 1.0;
+            //     }
+            // }
+
+            // @-webkit-keyframes parpadeo {
+            //     0% {
+            //         opacity: 1.0;
+            //     }
+
+            //     50% {
+            //         opacity: 0.0;
+            //     }
+
+            //     100% {
+            //         opacity: 1.0;
+            //     }
+            // }
+
+            // @keyframes parpadeo {
+            //     0% {
+            //         opacity: 1.0;
+            //     }
+
+            //     50% {
+            //         opacity: 0.0;
+            //     }
+
+            //     100% {
+            //         opacity: 1.0;
+            //     }
+            // }
 
             .parrafoDescriptivo {
                 color: $colorBlanco;
@@ -104,8 +150,7 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: $colorBlanco !important;
-        font-weight: bold;
+        color: $colorSecundario !important;
     }
 }
 

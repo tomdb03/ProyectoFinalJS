@@ -2,7 +2,8 @@
 
 header {
     grid-area: header;
-    background: linear-gradient(top, $colorNegro, $colorNegroHF);;
+    background: linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.9));
+    // background-color: rgba(0, 0, 0, 0.9);
     top: 0;
     width: 100%;
     padding: 12px;
@@ -21,10 +22,13 @@ nav {
 
         li {
             a {
-                color: $colorSecundario !important;
+                color: $colorBlanco !important;
                 font-size: larger;
-                font-weight: bolder;
+                // font-weight: bold; /* solo el activo */
                 text-transform: uppercase;
+            }
+            .pagActiva{
+                font-weight: bolder;
             }
         }
     }
@@ -33,7 +37,7 @@ nav {
 #botonNavbar {
     color: $colorSecundario;
     border: solid $colorSecundario;
-    background-color: $colorPrimario;
+    background-color: $colorBlanco;
 }
 
 .logo {

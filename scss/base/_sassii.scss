@@ -10,7 +10,8 @@ $coloresRedes: (twitter: #55acee,
 /* b) extends */
 
 %contenedorNegro {
-    background: $fondoNegro;
+    // background: $fondoNegro;
+    background: $colorNegro;
     border: solid $colorBlanco;
     border-radius: 8px;
     box-shadow: $boxShadowOscura;
@@ -24,18 +25,20 @@ $coloresRedes: (twitter: #55acee,
 %botones {
     text-transform: uppercase;
     margin: 0 3px 0 3px;
+    color: $colorNegro;
     background-color: $colorSecundario;
     border: solid 2px $colorBlanco;
     border-radius: 8px;
     font-weight: bold;
 
     &:hover {
-        background-color: $colorNegroHF;
+        background-color: $colorNegro;
         color: $colorSecundario;
     }
 
     &:focus {
         background-color: $colorBlanco;
+        color: $colorNegro;
     }
 }
 
