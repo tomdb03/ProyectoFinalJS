@@ -16,42 +16,112 @@ class Pelicula {
 
 const genero = ["Acción", "Aventuras", "Ciencia Ficción", "Comedia", "Drama", "Fantasía", "Musical", "Suspense", "Terror"];
 
-
-function mostrarAnios() {
-    const max = new Date().getFullYear();
-    const min = 1900;
-    const anio = [];
-    for (let i = max; i >= min; i--) {
-        anio.push(i);
-    }
-    return anio;
+const maxAnio = new Date().getFullYear();
+const minAnio = 1900;
+const anio = [];
+for (let i = maxAnio; i >= minAnio; i--) {
+    anio.push(i);
 }
-mostrarAnios();                     /* por qué no me lee anio??? */
-console.log(mostrarAnios());
 
-
-
-const precio = [7, 10, 13];
+const precio = [95, 100, 105];
 
 
 const TheUsualSuspects = new Pelicula("The Usual Suspects", genero[7], anio[27], precio[1]);
-const PulpFiction = new Pelicula("Pulp Fiction", genero[0], 1994, precio[1]);
-const ElHijoDeLaNovia = new Pelicula("El hijo de la novia", genero[4], 2001, precio[0]);
-const BigFish = new Pelicula("Big Fish", genero[5], 2003, precio[0]);
-const LoveActually = new Pelicula("Love Actually", genero[3], 2003, precio[0]);
-const ThereWillBeBlood = new Pelicula("There Will Be Blood", genero[4], 2007, precio[0]);
-const LaSuerteEstaEchada = new Pelicula("La suerte está echada", genero[3], 2005, precio[0]);
-const Psycho = new Pelicula("Psycho", genero[7], 1960, precio[2]);
-const TheHunt = new Pelicula("The Hunt", genero[4], 2012, precio[0]);
-const Whiplash = new Pelicula("Whiplash", genero[4], 2014, precio[0]);
-const LaDolceVita = new Pelicula("La dolce vita", genero[4], 1960, precio[2]);
-const ForrestGump = new Pelicula("Forrest Gump", genero[4], 1994, precio[1]);
+const PulpFiction = new Pelicula("Pulp Fiction", genero[0], anio[28], precio[1]);
+const ElHijoDeLaNovia = new Pelicula("El hijo de la novia", genero[4], anio[21], precio[0]);
+const BigFish = new Pelicula("Big Fish", genero[5], anio[19], precio[0]);
+const LoveActually = new Pelicula("Love Actually", genero[3], anio[19], precio[0]);
+const ThereWillBeBlood = new Pelicula("There Will Be Blood", genero[4], anio[15], precio[0]);
+const LaSuerteEstaEchada = new Pelicula("La suerte está echada", genero[3], anio[17], precio[0]);
+const Psycho = new Pelicula("Psycho", genero[7], anio[62], precio[2]);
+const TheHunt = new Pelicula("The Hunt", genero[4], anio[10], precio[0]);
+const Whiplash = new Pelicula("Whiplash", genero[4], anio[8], precio[0]);
+const LaDolceVita = new Pelicula("La dolce vita", genero[4], anio[62], precio[2]);
+const ForrestGump = new Pelicula("Forrest Gump", genero[4], anio[28], precio[1]);
 
 
 
 const arrayPeliculas = [TheUsualSuspects, PulpFiction, ElHijoDeLaNovia, BigFish, LoveActually, ThereWillBeBlood, LaSuerteEstaEchada, Psycho, TheHunt, Whiplash, LaDolceVita, ForrestGump];
-
 console.log(arrayPeliculas);
+
+
+
+
+/* filtros */           /* falta select para ver cual elegir */ /* tengo que hacer que sirva para todos, cómo? */
+
+const porPrecioSiete = arrayPeliculas.filter((el) => el.precio == precio[0]);
+console.log(porPrecioSiete);
+
+const porPrecioDiez = arrayPeliculas.filter((el) => el.precio == precio[1]);
+console.log(porPrecioDiez);
+
+const porPrecioTrece = arrayPeliculas.filter((el) => el.precio == precio[2]);
+console.log(porPrecioTrece);
+
+
+/* tengo que hacer que sirva para todos, cómo? */
+const porGenero = arrayPeliculas.filter((el) => el.genero == genero[0]);
+console.log(porGenero);
+
+
+
+
+/* ordenar */       /* falta que se pueda ordenar al revés */
+
+arrayPeliculas.sort((a, b) => {
+    if (a.nombre > b.nombre){
+        return 1;
+    }
+    if (a.nombre < b.nombre){
+        return -1;
+    }
+    return 0;
+})
+console.log(arrayPeliculas);
+
+arrayPeliculas.sort((a, b) => {
+    if (a.genero > b.genero){
+        return 1;
+    }
+    if (a.genero < b.genero){
+        return -1;
+    }
+    return 0;
+})
+console.log(arrayPeliculas);
+
+arrayPeliculas.sort((a, b) => {
+    if (a.anio > b.anio){
+        return 1;
+    }
+    if (a.anio < b.anio){
+        return -1;
+    }
+    return 0;
+})
+console.log(arrayPeliculas);
+
+arrayPeliculas.sort((a, b) => {
+    if (a.precio > b.precio){
+        return 1;
+    }
+    if (a.precio < b.precio){
+        return -1;
+    }
+    return 0;
+})
+console.log(arrayPeliculas);
+
+
+
+
+/* para el descuento en mi compra */
+
+// let cupon = 0.80;
+// const miCompra = [
+
+// ]
+// const precioFinalDescuento = miCompra.reduce( (acc, el) => acc + el.precio * cupon);    /* está un poco mal */
 
 
 
@@ -69,24 +139,6 @@ console.log(arrayPeliculas);
 
 
 
-/* filtros */
-
-// const porPrecioTrece = arrayPeliculas.filter((el) => el.precio == 13);
-// console.log(porPrecioTrece);
-
-// const porPrecioDiez = arrayPeliculas.filter((el) => el.precio == 10);
-// console.log(porPrecioDiez);
-
-// const porPrecioSiete = arrayPeliculas.filter((el) => el.precio == 7);
-// console.log(porPrecioSiete);
-
-
-// const porGenero = arrayPeliculas.filter((el) => el.genero. );
-// console.log(porGenero);
-
-
-
-
 
 
 /* mostrar solo los nombres de las peliculas */
@@ -96,17 +148,18 @@ console.log(arrayPeliculas);
 
 
 
+
 /* ¿No sabés que elegir? Proba cuál te toca al azar. */
 
 // peliAzar = () => {
-//     return Math.random( );       /* por su índice abría que hacerlo */
+//     return Math.random(arrayPeliculas);       /* por su índice abría que hacerlo */
 // }
 // console.log(peliAzar);          /* está mal */
 
 
 
 
-// function calcular() {
+// function calcular() {            /* ADAPTAR A LA PÁGINA DE PELÍCULAS */
 //     let precioLista = parseInt(prompt("Ingrese el precio de lista total"));
 //     if (precioLista > 0) {
 //         let cuotas = parseInt(prompt("Ingrese las cuotas en las que vas a pagar"));
@@ -131,10 +184,13 @@ console.log(arrayPeliculas);
 //         alert("Falta ingresar el precio de lista total");
 //     }
 // }
-
 // calcular();
 
+
 /* Me falta para la próxima entrega sincronizar ambas cosas (el descuento por transferencia por ejemplo), aunque no se me ocurre muy bien cómo */
+
+
+
 
 /*
 let peliculas = document.getElementsByClassName("peliTit");
@@ -145,29 +201,3 @@ for (pelicula of peliculas) {
 */
 
 
-/* ordenar */
-
-/*
-arrayPeliculas.sort((a, b) => {
-    if (a.nombre > b.nombre){
-        return 1;
-    }
-    if (a.nombre < b.nombre){
-        return -1;
-    }
-    return 0;
-})
-console.log(arrayPeliculas);
-*/
-
-
-
-
-
-/* para el descuento en mi compra */
-
-// let cupon = 0.80;
-// const miCompra = [
-
-// ]
-// const precioFinalDescuento = miCompra.reduce( (acc, el) => acc + el.precio * cupon);    /* capaz está un poco mal */
