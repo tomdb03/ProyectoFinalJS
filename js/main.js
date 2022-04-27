@@ -54,36 +54,39 @@ console.log(arrayPeliculas);
 
 //     let htmlPeli = '<div class="peli"><img loading="lazy" class="peliImg" src="../images/peliculas/peli-1.jpg" alt="Foto de The Usual Suspects"><div class="peliBody"><h2 class="peliTit"></h2><p class="peliGenAn">'+valor.genero+' - '+valor.anio+'</p><div class="peliBts"><input class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>'
 //     console.log('Salida del html armado dinamico:'+htmlPeli);
-    
+
 // });
 
 
 
 
-/* filtros */           /* falta select para ver cual elegir */ /* tengo que hacer que sirva para todos, cómo? */
+/* filtros */
+/* falta select para ver cual elegir */
+/* tengo que hacer que sirva para todos, cómo? */
 
 
 //Filtrado por precio igual a 95
 const porPrecioSiete = arrayPeliculas.filter((el) => el.precio == precio[0]);
-console.log("Precio 95:  %O",porPrecioSiete);
+console.log("Precio 95:  %O", porPrecioSiete);
 
 //Filtrado por precio igual a 100
 const porPrecioDiez = arrayPeliculas.filter((el) => el.precio == precio[1]);
-console.log("Precio 100:  %O",porPrecioDiez);
+console.log("Precio 100:  %O", porPrecioDiez);
 
 //Filtrado por precio igual a 105
 const porPrecioTrece = arrayPeliculas.filter((el) => el.precio == precio[2]);
-console.log("Precio 105:  %O",porPrecioTrece);
+console.log("Precio 105:  %O", porPrecioTrece);
 
 
 /* tengo que hacer que sirva para todos, cómo? */
 const porGenero = arrayPeliculas.filter((el) => el.genero == genero[4]);
-console.log("Género drama:  %O",porGenero);
+console.log("Género drama:  %O", porGenero);
 
 
 
 
-/* ordenar */       /* falta que se pueda ordenar al revés */
+/* ordenar */
+/* falta que se pueda ordenar al revés */
 
 
 // arrayPeliculas.sort((a, b) => {
@@ -117,15 +120,15 @@ console.log("Género drama:  %O",porGenero);
 
 // ordeno por precio
 arrayPeliculas.sort((a, b) => {
-    if (a.precio > b.precio){
+    if (a.precio > b.precio) {
         return 1;
     }
-    if (a.precio < b.precio){
+    if (a.precio < b.precio) {
         return -1;
     }
     return 0;
 })
-console.log("Ordenado por precio, de bajos a altos:  %O",arrayPeliculas);
+console.log("Ordenado por precio, de bajos a altos:  %O", arrayPeliculas);
 
 
 
@@ -176,27 +179,37 @@ console.log("Ordenado por precio, de bajos a altos:  %O",arrayPeliculas);
 /* método reduce de array para calcular */
 
 
-function calcular() {            /* ADAPTAR BIEN A LA PÁGINA DE PELÍCULAS */
+function calcular() {
+    /* ADAPTAR BIEN A LA PÁGINA DE PELÍCULAS */
+
     let precioLista = parseInt(prompt("Ingrese el precio de lista total"));
     if (precioLista > 0) {
-        let demora = parseInt(prompt("Ingrese los días que tardaste en devolver la película"));
-        let interes = parseInt(prompt("Ingrese el interés en porcentaje"));
-        let demoraContador = 1;
-        for (i = 1; i <= demora; i++) {
-            precioLInd = precioLista / demora;
-            interesInd = ((precioLista * interes) / 100) / demora;
-            montoInd = precioLInd + interesInd;
-            console.log("El precio de lista del día " + demoraContador + " es de " + precioLInd);
-            console.log("El interés del día de demora " + demoraContador + " es de " + interesInd);
-            console.log("El importe del día de demora " + demoraContador + " es de " + montoInd);
-            console.log("\n");
-            demoraContador = demoraContador + 1;
+        let huboDemora = prompt("¿Tuviste días de demora para devolver la película? ¿Si o no?");
+        if (huboDemora == "si" || huboDemora == "Si") {
+            let demora = parseInt(prompt("Ingrese los días que tardaste demás en devolver la película"));
+            let interes = parseInt(prompt("Ingrese el interés en porcentaje"));
+            let demoraContador = 1;
+            for (i = 1; i <= demora; i++) {
+                precioLInd = precioLista / demora;
+                interesInd = ((precioLista * interes) / 100) / demora;
+                montoInd = precioLInd + interesInd;
+                // console.log("El precio de lista del día " + demoraContador + " es de " + precioLInd);
+                console.log("El interés del día de demora " + demoraContador + " es de " + interesInd);
+                // console.log("El importe del día de demora " + demoraContador + " es de " + montoInd);
+                // console.log("\n");
+                demoraContador = demoraContador + 1;
+            }
+            interesTot = interesInd * demora;
+            montoTot = montoInd * demora;
+            console.log("El precio de lista total es de " + precioLista);
+            console.log("El interés total es de " + interesTot);
+            console.log("El importe final es de " + montoTot);
         }
-        interesTot = interesInd * demora;
-        montoTot = montoInd * demora;
-        console.log("El precio de lista total es de " + precioLista);
-        console.log("El interés total es de " + interesTot);
-        console.log("El importe final es de " + montoTot);
+        else if (huboDemora == "no" || huboDemora == "No") {
+            alert("El total a pagar es: " + precioLista);
+        } else {
+            alert("Debes ingresar si o no");
+        }
     } else {
         alert("Falta ingresar el precio de lista total");
     }
@@ -212,7 +225,5 @@ calcular();
 
 let peliculas = document.getElementsByClassName("peliTit");
 for (pelicula of peliculas) {
-    console.log("Nombre:  %O",pelicula.innerHTML)
-};
-
-
+    console.log("Nombre:  %O", pelicula.innerHTML)
+}
