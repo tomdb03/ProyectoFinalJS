@@ -46,13 +46,13 @@ console.log(ForrestGump.precio);
 
 
 let arrayPeliculas = [TheUsualSuspects, PulpFiction, ElHijoDeLaNovia, BigFish, LoveActually, ThereWillBeBlood, LaSuerteEstaEchada, Psycho, TheHunt, Whiplash, LaDolceVita, ForrestGump];
-console.log(arrayPeliculas);
+console.log("Array películas:  %O", arrayPeliculas);
 
 
 
 // arrayPeliculas.forEach( function(valor, indice) {
 
-//     let htmlPeli = '<div class="peli"><img loading="lazy" class="peliImg" src="../images/peliculas/peli-1.jpg" alt="Foto de The Usual Suspects"><div class="peliBody"><h2 class="peliTit"></h2><p class="peliGenAn">'+valor.genero+' - '+valor.anio+'</p><div class="peliBts"><input class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>'
+//     let htmlPeli = '<div class="peli"><img loading="lazy" class="peliImg" src="../images/peliculas/peli-1.jpg" alt="Foto de The Usual Suspects"><div class="peliBody"><h2 class="peliTit"></h2><p class="peliGenAn">'+valor.genero+' - '+valor.anio+'</p><div class="peliBts"><input onclick="aggCarrito()" class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>'
 //     console.log('Salida del html armado dinamico:'+htmlPeli);
 
 // });
@@ -179,9 +179,8 @@ console.log("Ordenado por precio, de bajos a altos:  %O", arrayPeliculas);
 /* método reduce de array para calcular */
 
 
-function calcular() {
-    /* ADAPTAR BIEN A LA PÁGINA DE PELÍCULAS */
 
+function calcular() {            /* ADAPTAR BIEN A LA PÁGINA DE PELÍCULAS */
     let precioLista = parseInt(prompt("Ingrese el precio de lista total"));
     if (precioLista > 0) {
         let huboDemora = prompt("¿Tuviste días de demora para devolver la película? ¿Si o no?");
@@ -204,8 +203,7 @@ function calcular() {
             console.log("El precio de lista total es de " + precioLista);
             console.log("El interés total es de " + interesTot);
             console.log("El importe final es de " + montoTot);
-        }
-        else if (huboDemora == "no" || huboDemora == "No") {
+        } else if (huboDemora == "no" || huboDemora == "No") {
             alert("El total a pagar es: " + precioLista);
         } else {
             alert("Debes ingresar si o no");
@@ -222,8 +220,19 @@ calcular();
 
 
 
+/* lista de solo los nombres de las películas */
 
-let peliculas = document.getElementsByClassName("peliTit");
-for (pelicula of peliculas) {
-    console.log("Nombre:  %O", pelicula.innerHTML)
+// let peliculas = document.getElementsByClassName("peliTit");
+// for (pelicula of peliculas) {
+//     console.log("Nombre:  %O", pelicula.innerHTML)
+// }
+
+
+
+
+
+/* click en agregar al carrito */
+
+function aggCarrito() {
+    alert("Agregado al carrito");
 }
