@@ -1,5 +1,7 @@
 class Pelicula {
-    constructor(nombre, genero, anio, precio) {
+    constructor(imagenSrc, imagenAlt, nombre, genero, anio, precio) {
+        this.imagenSrc = imagenSrc;
+        this.imagenAlt = imagenAlt;
         this.nombre = nombre;
         this.genero = genero;
         this.anio = anio;
@@ -14,6 +16,10 @@ class Pelicula {
     }
 }
 
+const imagenSrc = ["../images/peliculas/peli-1.jpg", "../images/peliculas/peli-2.jpg", "../images/peliculas/peli-3.jpg", "../images/peliculas/peli-4.jpg", "../images/peliculas/peli-5.jpg", "../images/peliculas/peli-6.jpg", "../images/peliculas/peli-7.jpg", "../images/peliculas/peli-8.jpg", "../images/peliculas/peli-9.jpg", "../images/peliculas/peli-10.jpg", "../images/peliculas/peli-11.jpg", "../images/peliculas/peli-12.jpg"];
+
+const imagenAlt = ["Foto de The Usual Suspects", "Foto de Pulp Fiction", "Foto de El hijo de la novia", "Foto de Big Fish", "Foto de Love Actually", "Foto de There Will Be Blood", "Foto de La suerte está echada", "Foto de Psycho", "Foto de The Hunt", "Foto de Whiplash", "Foto de La dolce vita", "Foto de Forrest Gump"];
+
 const genero = ["Acción", "Aventuras", "Ciencia Ficción", "Comedia", "Drama", "Fantasía", "Musical", "Suspense", "Terror"];
 
 const maxAnio = new Date().getFullYear();
@@ -26,18 +32,18 @@ for (let i = maxAnio; i >= minAnio; i--) {
 const precio = [95, 100, 105];
 
 
-let TheUsualSuspects = new Pelicula("The Usual Suspects", genero[7], anio[27], precio[1]);
-let PulpFiction = new Pelicula("Pulp Fiction", genero[0], anio[28], precio[1]);
-let ElHijoDeLaNovia = new Pelicula("El hijo de la novia", genero[4], anio[21], precio[0]);
-let BigFish = new Pelicula("Big Fish", genero[5], anio[19], precio[0]);
-let LoveActually = new Pelicula("Love Actually", genero[3], anio[19], precio[0]);
-let ThereWillBeBlood = new Pelicula("There Will Be Blood", genero[4], anio[15], precio[0]);
-let LaSuerteEstaEchada = new Pelicula("La suerte está echada", genero[3], anio[17], precio[0]);
-let Psycho = new Pelicula("Psycho", genero[7], anio[62], precio[2]);
-let TheHunt = new Pelicula("The Hunt", genero[4], anio[10], precio[0]);
-let Whiplash = new Pelicula("Whiplash", genero[4], anio[8], precio[0]);
-let LaDolceVita = new Pelicula("La dolce vita", genero[4], anio[62], precio[2]);
-let ForrestGump = new Pelicula("Forrest Gump", genero[4], anio[28], precio[1]);
+let TheUsualSuspects = new Pelicula(imagenSrc[0], imagenAlt[0], "The Usual Suspects", genero[7], anio[27], precio[1]);
+let PulpFiction = new Pelicula(imagenSrc[1], imagenAlt[1], "Pulp Fiction", genero[0], anio[28], precio[1]);
+let ElHijoDeLaNovia = new Pelicula(imagenSrc[2], imagenAlt[2], "El hijo de la novia", genero[4], anio[21], precio[0]);
+let BigFish = new Pelicula(imagenSrc[3], imagenAlt[3], "Big Fish", genero[5], anio[19], precio[0]);
+let LoveActually = new Pelicula(imagenSrc[4], imagenAlt[4], "Love Actually", genero[3], anio[19], precio[0]);
+let ThereWillBeBlood = new Pelicula(imagenSrc[5], imagenAlt[5], "There Will Be Blood", genero[4], anio[15], precio[0]);
+let LaSuerteEstaEchada = new Pelicula(imagenSrc[6], imagenAlt[6], "La suerte está echada", genero[3], anio[17], precio[0]);
+let Psycho = new Pelicula(imagenSrc[7], imagenAlt[7], "Psycho", genero[7], anio[62], precio[2]);
+let TheHunt = new Pelicula(imagenSrc[8], imagenAlt[8], "The Hunt", genero[4], anio[10], precio[0]);
+let Whiplash = new Pelicula(imagenSrc[9], imagenAlt[9], "Whiplash", genero[4], anio[8], precio[0]);
+let LaDolceVita = new Pelicula(imagenSrc[10], imagenAlt[10], "La dolce vita", genero[4], anio[62], precio[2]);
+let ForrestGump = new Pelicula(imagenSrc[11], imagenAlt[11], "Forrest Gump", genero[4], anio[28], precio[1]);
 
 ForrestGump.vender();
 console.log(ForrestGump.vendido);
@@ -56,6 +62,12 @@ console.log("Array películas:  %O", arrayPeliculas);
 //     console.log('Salida del html armado dinamico:'+htmlPeli);
 
 // });
+
+arrayPeliculas.forEach(function (valor) {
+    let htmlPeli = `<div class="peli"><img loading="lazy" class="peliImg" src=` + valor.imagenSrc + ` alt=` + valor.imagenAlt + `><div class="peliBody"><h2 class="peliTit">` + valor.nombre + `</h2><p class="peliGenAn">` + valor.genero + ` - ` + valor.anio + `</p><div class="peliBts"><input onclick="aggCarrito()" class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>`
+    console.log('Salida del html armado dinámico:' + htmlPeli);
+    document.getElementById("peliculasContainer").innerHTML += htmlPeli;
+});
 
 
 
@@ -180,39 +192,40 @@ console.log("Ordenado por precio, de bajos a altos:  %O", arrayPeliculas);
 
 
 
-function calcular() {            /* ADAPTAR BIEN A LA PÁGINA DE PELÍCULAS */
-    let precioLista = parseInt(prompt("Ingrese el precio de lista total"));
-    if (precioLista > 0) {
-        let huboDemora = prompt("¿Tuviste días de demora para devolver la película? ¿Si o no?");
-        if (huboDemora == "si" || huboDemora == "Si") {
-            let demora = parseInt(prompt("Ingrese los días que tardaste demás en devolver la película"));
-            let interes = parseInt(prompt("Ingrese el interés en porcentaje"));
-            let demoraContador = 1;
-            for (i = 1; i <= demora; i++) {
-                precioLInd = precioLista / demora;
-                interesInd = ((precioLista * interes) / 100) / demora;
-                montoInd = precioLInd + interesInd;
-                // console.log("El precio de lista del día " + demoraContador + " es de " + precioLInd);
-                console.log("El interés del día de demora " + demoraContador + " es de " + interesInd);
-                // console.log("El importe del día de demora " + demoraContador + " es de " + montoInd);
-                // console.log("\n");
-                demoraContador = demoraContador + 1;
-            }
-            interesTot = interesInd * demora;
-            montoTot = montoInd * demora;
-            console.log("El precio de lista total es de " + precioLista);
-            console.log("El interés total es de " + interesTot);
-            console.log("El importe final es de " + montoTot);
-        } else if (huboDemora == "no" || huboDemora == "No") {
-            alert("El total a pagar es: " + precioLista);
-        } else {
-            alert("Debes ingresar si o no");
-        }
-    } else {
-        alert("Falta ingresar el precio de lista total");
-    }
-}
-calcular();
+// function calcular() {
+//     /* ADAPTAR BIEN A LA PÁGINA DE PELÍCULAS */
+//     let precioLista = parseInt(prompt("Ingrese el precio de lista total"));
+//     if (precioLista > 0) {
+//         let huboDemora = prompt("¿Tuviste días de demora para devolver la película? ¿Si o no?");
+//         if (huboDemora == "si" || huboDemora == "Si") {
+//             let demora = parseInt(prompt("Ingrese los días que tardaste demás en devolver la película"));
+//             let interes = parseInt(prompt("Ingrese el interés en porcentaje"));
+//             let demoraContador = 1;
+//             for (i = 1; i <= demora; i++) {
+//                 precioLInd = precioLista / demora;
+//                 interesInd = ((precioLista * interes) / 100) / demora;
+//                 montoInd = precioLInd + interesInd;
+//                 // console.log("El precio de lista del día " + demoraContador + " es de " + precioLInd);
+//                 console.log("El interés del día de demora " + demoraContador + " es de " + interesInd);
+//                 // console.log("El importe del día de demora " + demoraContador + " es de " + montoInd);
+//                 // console.log("\n");
+//                 demoraContador = demoraContador + 1;
+//             }
+//             interesTot = interesInd * demora;
+//             montoTot = montoInd * demora;
+//             console.log("El precio de lista total es de " + precioLista);
+//             console.log("El interés total es de " + interesTot);
+//             console.log("El importe final es de " + montoTot);
+//         } else if (huboDemora == "no" || huboDemora == "No") {
+//             alert("El total a pagar es: " + precioLista);
+//         } else {
+//             alert("Debes ingresar si o no");
+//         }
+//     } else {
+//         alert("Falta ingresar el precio de lista total");
+//     }
+// }
+// calcular();
 
 
 /* Me falta para la próxima entrega sincronizar ambas cosas (el descuento por transferencia por ejemplo), aunque no se me ocurre muy bien cómo */
@@ -222,10 +235,10 @@ calcular();
 
 /* lista de solo los nombres de las películas */
 
-// let peliculas = document.getElementsByClassName("peliTit");
-// for (pelicula of peliculas) {
-//     console.log("Nombre:  %O", pelicula.innerHTML)
-// }
+let peliculas = document.getElementsByClassName("peliTit");
+for (pelicula of peliculas) {
+    console.log("Solo nombre:  %O", pelicula.innerHTML)
+}
 
 
 

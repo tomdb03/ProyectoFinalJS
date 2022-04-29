@@ -1,7 +1,7 @@
 /* media querys */
 
 @media screen and (max-width: 1024px) {
-    .peliculasContainer {
+    #peliculasContainer {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
@@ -39,7 +39,7 @@
         width: 60px;
     }
 
-    .peliculasContainer {
+    #peliculasContainer {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -55,7 +55,7 @@
         }
     }
 
-    .peliculasContainer {
+    #peliculasContainer {
         grid-template-columns: 1fr;
     }
 
