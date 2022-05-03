@@ -55,14 +55,7 @@ let arrayPeliculas = [TheUsualSuspects, PulpFiction, ElHijoDeLaNovia, BigFish, L
 console.log("Array películas:  %O", arrayPeliculas);
 
 
-
-// arrayPeliculas.forEach( function(valor, indice) {
-
-//     let htmlPeli = '<div class="peli"><img loading="lazy" class="peliImg" src="../images/peliculas/peli-1.jpg" alt="Foto de The Usual Suspects"><div class="peliBody"><h2 class="peliTit"></h2><p class="peliGenAn">'+valor.genero+' - '+valor.anio+'</p><div class="peliBts"><input onclick="aggCarrito()" class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>'
-//     console.log('Salida del html armado dinamico:'+htmlPeli);
-
-// });
-
+/* Armado dinámico de la sección de películas */
 arrayPeliculas.forEach(function (valor) {
     let htmlPeli = `<div class="peli"><img loading="lazy" class="peliImg" src=` + valor.imagenSrc + ` alt=` + valor.imagenAlt + `><div class="peliBody"><h2 class="peliTit">` + valor.nombre + `</h2><p class="peliGenAn">` + valor.genero + ` - ` + valor.anio + `</p><div class="peliBts"><input onclick="aggCarrito()" class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>`
     console.log('Salida del html armado dinámico:' + htmlPeli);
@@ -249,3 +242,8 @@ for (pelicula of peliculas) {
 function aggCarrito() {
     alert("Agregado al carrito");
 }
+
+/* no anda porque el jQuery se hace aparte */
+// $(".peliBoton").click(function(){
+//     alert("Agregado al carrito.");
+// });
