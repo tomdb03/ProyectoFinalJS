@@ -67,27 +67,22 @@
                 <form class="carritoContainer">
                     <div class="campos">
                         <label for="precioLista">Precio de lista total:</label>
-                        <input type="text" name="precioLista" id="precioLista">
-                        <label for="huboDemora">Hubo días de demora?:
-                            <input class="huboDemora" type="text" placeholder="Si o no" id="huboDemora">
-                        </label>
-                        <label for="diasDemora">Cuántos días de demora?:
-                            <input class="diasDemora" type="text" id="diasDemora">
-                        </label>
-                         <label for="interes">Ingrese interes
-                            <input type="text" name="interes" id="interes">
-                        </label>
+                        <input class="inputCarrito" type="text" name="precioLista" id="precioLista">
+                        <label for="huboDemora">Hubo días de demora?:</label>
+                        <input class="inputCarrito" class="huboDemora" type="text" placeholder="Si o no"
+                            id="huboDemora">
+                        <label for="interes">Si hubo, ingrese el interés correspondiente a esos días:</label>
+                        <input class="inputCarrito" type="text" name="interes" id="interes">
                     </div>
                     <div class="containerBotones">
                         <button class="botones" type="reset">Limpiar</button>
-                        <button class="botones" onclick="Calcular2(); return false;">Calcular</button>
+                        <button class="botones" onclick="calcular2(); return false;">Calcular</button>
                     </div>
-                    <div class="salidaCalculo">
-                        <label for="montoCC">Monto de cada cuota:</label>
+                    <div class="campos">
                         <label for="montoFinal">Monto final:</label>
-                        <input type="text" class="montoFinal" id="montoFinal">
+                        <input class="inputCarrito" type="text" id="montoFinal">
                         <label for="ultmontoFinal">Último monto final calculado:</label>
-                        <input type="text" class="ultimomontoFinal" id="ultimomontoFinal">
+                        <input class="inputCarrito" type="text" id="ultimomontoFinal">
                     </div>
                 </form>
             </div>

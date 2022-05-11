@@ -8,7 +8,7 @@
     margin: 0px auto 0px auto;
     @extend %contenedorNegro;
 
-    .campos{
+    .campos {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -18,13 +18,18 @@
             color: $colorBlanco;
             font-size: 20px;
             padding: 6px;
-            .inputCarrito {
-                background-color: $colorBlanco;
-                width: 80%;
-                border: solid 2px $colorSecundario;
-                border-radius: 8px;
-                padding: 2px;
-            }
+            text-align: center;
+        }
+
+        .inputCarrito {
+            background-color: $colorBlanco;
+            width: 80%;
+            border: solid 2px $colorSecundario;
+            border-radius: 8px;
+            padding: 2px;
+            text-align: center;
+            margin: 0 auto 0 auto;
+            padding: 7px;
         }
     }
 
@@ -37,21 +42,8 @@
         .botones {
             height: 40px;
             margin: 10px 0 10px 0;
-            width: 40%;
+            width: 35%;
             @extend %botones;
         }
     }
-
-.montos{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 7px;
-    label{
-        color: $colorBlanco;
-        font-size: 20px;
-        padding: 6px;
-    }
-
-}
 }

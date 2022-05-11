@@ -185,7 +185,7 @@ console.log("Ordenado por precio, de bajos a altos:  %O", arrayPeliculas);
 /* método reduce de array para calcular */
 
 
-
+/* función vieja!! */
 function calcular() {
     /* ADAPTAR BIEN A LA PÁGINA DE PELÍCULAS */
     let precioLista = parseInt(prompt("Ingrese el precio de lista total"));
@@ -223,53 +223,35 @@ function calcular() {
 
 
 
-function Calcular2() {
+function calcular2() {
     let precioLista = parseInt(document.getElementById('precioLista').value);
     if (precioLista > 0) {
         localStorage.setItem("precioLista", precioLista);
-        // document.getElementById('montoFinal').value=precioLista;
-        document.getElementById("montoFinal").setAttribute('value', precioLista);
-        // let huboDemora = prompt("¿Tuviste días de demora para devolver la película? ¿Si o no?");
-        // if (huboDemora == "si" || huboDemora == "Si") {
-        //     let demora = parseInt(prompt("Ingrese los días que tardaste demás en devolver la película"));
-        //     let interes = parseInt(prompt("Ingrese el interés en porcentaje"));
-        //     let demoraContador = 1;
-        //     for (i = 1; i <= demora; i++) {
-        //         precioLInd = precioLista / demora;
-        //         interesInd = ((precioLista * interes) / 100) / demora;
-        //         montoInd = precioLInd + interesInd;
-        //         // console.log("El precio de lista del día " + demoraContador + " es de " + precioLInd);
-        //         console.log("El interés del día de demora " + demoraContador + " es de " + interesInd);
-        //         // console.log("El importe del día de demora " + demoraContador + " es de " + montoInd);
-        //         // console.log("\n");
-        //         demoraContador = demoraContador + 1;
-        //     }
-        //     interesTot = interesInd * demora;
-        //     montoTot = montoInd * demora;
-        //     console.log("El precio de lista total es de " + precioLista);
-        //     console.log("El interés total es de " + interesTot);
-        //     console.log("El importe final es de " + montoTot);
-        // } else if (huboDemora == "no" || huboDemora == "No") {
-        //     alert("El total a pagar es: " + precioLista);
-        // } else {
-        //     alert("Debes ingresar si o no");
-        // }
+        let huboDemora = document.getElementById('huboDemora').value;
+        if (huboDemora == "si" || huboDemora == "Si") {
+            let interes = parseInt(document.getElementById('interes').value);
+            interesTot = (precioLista * interes) / 100;
+            montoTot = precioLista + interesTot;
+            document.getElementById("montoFinal").setAttribute('value', montoTot);
+            localStorage.setItem("montoTot", montoTot);
+
+        } else if (huboDemora == "no" || huboDemora == "No") {
+            document.getElementById("montoFinal").setAttribute('value', precioLista);
+            localStorage.setItem("montoTot", precioLista);
+        } else {
+            alert("Debes ingresar si o no");
+        }
     } else {
         alert("Falta ingresar el precio de lista total");
     }
 }
 
-
 function obtenerLocalStorage() {
-    if (localStorage.getItem("precioLista")) {
-
-        let precioListaLS = localStorage.getItem("precioLista");
-        console.log(precioLista);
-        document.getElementById("ultimomontoFinal").setAttribute('value', precioListaLS);
-
+    if (localStorage.getItem("montoTot")) {
+        let montoTotLS = localStorage.getItem("montoTot");
+        document.getElementById("ultimomontoFinal").setAttribute('value', montoTotLS);
     } else {
-        console.log("No hay entradas en el local storage");
-    }
+        document.getElementById("ultimomontoFinal").setAttribute('value', "No hay nada aun");    }
 }
 let isCarrito = document.getElementsByClassName('carritoContainer');
 if (isCarrito.length > 0) {
@@ -278,10 +260,6 @@ if (isCarrito.length > 0) {
 
 
 
-
-
-
-/* Me falta para la próxima entrega sincronizar ambas cosas (el descuento por transferencia por ejemplo), aunque no se me ocurre muy bien cómo */
 
 
 
@@ -335,12 +313,5 @@ function aggCarrito() {
 
 
 /* local storage */
-
-
-
-function guardarLocalStorage() {
-
-}
-
 
 // localStorage.setItem("arrayPeliculas", JSON.stringify(arrayPeliculas));
