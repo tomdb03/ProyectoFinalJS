@@ -66,23 +66,28 @@
                 <h2 class="parrafoDescriptivo">Confirmá tu compra.</h2>
                 <form class="carritoContainer">
                     <div class="campos">
-                        <label for="articulos">Artículos en el carrito:</label>
                         <label for="precioLista">Precio de lista total:</label>
-                        <label for="coutas">Cuotas:
-                            <input class="inputCarrito" type="text" placeholder="Ingrese las cuotas en las que vas a pagar" id="coutas">
+                        <input type="text" name="precioLista" id="precioLista">
+                        <label for="huboDemora">Hubo días de demora?:
+                            <input class="huboDemora" type="text" placeholder="Si o no" id="huboDemora">
                         </label>
-                        <label for="interes">Porcentaje de interés:</label>
-                        <label for="transferencia">¿Desea pagar con transferencia para un 20% de descuento?
-                            <input type="checkbox" name="transferencia" id="transferencia">
+                        <label for="diasDemora">Cuántos días de demora?:
+                            <input class="diasDemora" type="text" id="diasDemora">
+                        </label>
+                         <label for="interes">Ingrese interes
+                            <input type="text" name="interes" id="interes">
                         </label>
                     </div>
                     <div class="containerBotones">
                         <button class="botones" type="reset">Limpiar</button>
-                        <button class="botones" type="submit">Calcular</button>
+                        <button class="botones" onclick="Calcular2(); return false;">Calcular</button>
                     </div>
-                    <div class="montos">
+                    <div class="salidaCalculo">
                         <label for="montoCC">Monto de cada cuota:</label>
                         <label for="montoFinal">Monto final:</label>
+                        <input type="text" class="montoFinal" id="montoFinal">
+                        <label for="ultmontoFinal">Último monto final calculado:</label>
+                        <input type="text" class="ultimomontoFinal" id="ultimomontoFinal">
                     </div>
                 </form>
             </div>
