@@ -41,10 +41,10 @@ let Whiplash = new Pelicula("../images/peliculas/peli-10.jpg", "Foto de Whiplash
 let LaDolceVita = new Pelicula("../images/peliculas/peli-11.jpg", "Foto de La dolce vita", "La dolce vita", genero[4], anio[62], precio[2]);
 let ForrestGump = new Pelicula("../images/peliculas/peli-12.jpg", "Foto de Forrest Gump", "Forrest Gump", genero[4], anio[28], precio[1]);
 
-ForrestGump.vender();
-console.log(ForrestGump.vendido);
-ForrestGump.descuentoTransferencia();
-console.log(ForrestGump.precio);
+// ForrestGump.vender();
+// console.log(ForrestGump.vendido);
+// ForrestGump.descuentoTransferencia();
+// console.log(ForrestGump.precio);
 
 
 let arrayPeliculas = [TheUsualSuspects, PulpFiction, ElHijoDeLaNovia, BigFish, LoveActually, ThereWillBeBlood, LaSuerteEstaEchada, Psycho, TheHunt, Whiplash, LaDolceVita, ForrestGump];
@@ -63,6 +63,8 @@ if (isPeliculas.length > 0) {
 }
 
 
+
+console.log( Pelicula?.nombre || "Esa película no la tenemos disponible");
 
 
 
@@ -171,55 +173,7 @@ console.log("Ordenado por precio, de bajos a altos:  %O", arrayPeliculas);
 // console.log(nombresPeliculas);
 
 
-
-
-/* ¿No sabés que elegir? Proba cuál te toca al azar. */
-
-// peliAzar = () => {
-//     return Math.random(arrayPeliculas);       /* por su índice abría que hacerlo */
-// }
-// console.log(peliAzar);          /* está mal */
-
-
-
 /* método reduce de array para calcular */
-
-
-/* función vieja!! */
-function calcular() {
-    /* ADAPTAR BIEN A LA PÁGINA DE PELÍCULAS */
-    let precioLista = parseInt(prompt("Ingrese el precio de lista total"));
-    if (precioLista > 0) {
-        let huboDemora = prompt("¿Tuviste días de demora para devolver la película? ¿Si o no?");
-        if (huboDemora == "si" || huboDemora == "Si") {
-            let demora = parseInt(prompt("Ingrese los días que tardaste demás en devolver la película"));
-            let interes = parseInt(prompt("Ingrese el interés en porcentaje"));
-            let demoraContador = 1;
-            for (i = 1; i <= demora; i++) {
-                precioLInd = precioLista / demora;
-                interesInd = ((precioLista * interes) / 100) / demora;
-                montoInd = precioLInd + interesInd;
-                // console.log("El precio de lista del día " + demoraContador + " es de " + precioLInd);
-                console.log("El interés del día de demora " + demoraContador + " es de " + interesInd);
-                // console.log("El importe del día de demora " + demoraContador + " es de " + montoInd);
-                // console.log("\n");
-                demoraContador = demoraContador + 1;
-            }
-            interesTot = interesInd * demora;
-            montoTot = montoInd * demora;
-            console.log("El precio de lista total es de " + precioLista);
-            console.log("El interés total es de " + interesTot);
-            console.log("El importe final es de " + montoTot);
-        } else if (huboDemora == "no" || huboDemora == "No") {
-            alert("El total a pagar es: " + precioLista);
-        } else {
-            alert("Debes ingresar si o no");
-        }
-    } else {
-        alert("Falta ingresar el precio de lista total");
-    }
-}
-// calcular();
 
 
 
@@ -247,6 +201,7 @@ function calcular2() {
 }
 
 function obtenerLocalStorage() {
+
     if (localStorage.getItem("montoTot")) {
         let montoTotLS = localStorage.getItem("montoTot");
         document.getElementById("ultimomontoFinal").setAttribute('value', montoTotLS);
@@ -266,10 +221,10 @@ if (isCarrito.length > 0) {
 
 /* lista de solo los nombres de las películas */
 
-let peliculas = document.getElementsByClassName("peliTit");
-for (pelicula of peliculas) {
-    console.log("Solo nombre:  %O", pelicula.innerHTML)
-}
+// let peliculas = document.getElementsByClassName("peliTit");
+// for (pelicula of peliculas) {
+//     console.log("Solo nombre:  %O", pelicula.innerHTML)
+// }
 
 
 
@@ -314,4 +269,18 @@ function aggCarrito() {
 
 /* local storage */
 
-// localStorage.setItem("arrayPeliculas", JSON.stringify(arrayPeliculas));
+// const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
+
+// //Almacenar producto por producto
+// for (const pelicula of arrayPeliculas) {
+//     guardarLocal(pelicula.nombre, JSON.stringify(pelicula));
+// }
+// // o almacenar array completo
+// guardarLocal("listaPeliculas", JSON.stringify(arrayPeliculas));
+
+
+
+
+/* tengo que armar la función para carrito*/
+ 
+const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
