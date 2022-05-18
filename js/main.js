@@ -282,5 +282,14 @@ function aggCarrito() {
 
 
 /* tengo que armar la función para carrito*/
- 
-const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+const carrito = [];
+
+
+let carritoVacio = function () {
+    console.log("El carrito está vacío");
+}
+carrito.length === 0 && carritoVacio();
+
+
+// const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
