@@ -46,10 +46,13 @@
             font-weight: 700;
             letter-spacing: 3px;
             color: $colorSecundario;
+            font-size: larger;
+            cursor: pointer;
         }
 
         .respuesta {
             color: $colorBlanco;
+            display: none;
         }
 
         .preguntaLista {

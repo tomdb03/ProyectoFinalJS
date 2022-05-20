@@ -57,14 +57,13 @@ if (isPeliculas.length > 0) {
     // elements with class "snake--mobile" exist
     arrayPeliculas.forEach(function (valor) {
         let htmlPeli = `<div class="peli"><img loading="lazy" class="peliImg" src=` + valor.imagenSrc + ` alt=` + valor.imagenAlt + `><div class="peliBody"><h2 class="peliTit">` + valor.nombre + `</h2><p class="peliGenAn">` + valor.genero + ` - ` + valor.anio + `</p><div class="peliBts"><input onclick="aggCarrito()" class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>`
-        console.log('Salida del html armado dinámico:' + htmlPeli);
+        // console.log('Salida del html armado dinámico:' + htmlPeli);
         document.getElementById("peliculasContainer").innerHTML += htmlPeli;
     });
 }
 
 
 
-console.log( Pelicula?.nombre || "Esa película no la tenemos disponible");
 
 
 
@@ -206,7 +205,8 @@ function obtenerLocalStorage() {
         let montoTotLS = localStorage.getItem("montoTot");
         document.getElementById("ultimomontoFinal").setAttribute('value', montoTotLS);
     } else {
-        document.getElementById("ultimomontoFinal").setAttribute('value', "No hay nada aun");    }
+        document.getElementById("ultimomontoFinal").setAttribute('value', "No hay nada aun");
+    }
 }
 let isCarrito = document.getElementsByClassName('carritoContainer');
 if (isCarrito.length > 0) {
@@ -292,4 +292,16 @@ let carritoVacio = function () {
 carrito.length === 0 && carritoVacio();
 
 
-// const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let carritoLS = JSON.parse(localStorage.getItem('carrito')) || [];
+
+
+if (jQuery('#containerPeliculas').length > 0) {
+    totPelis = jQuery('#peliculasContainer .peli').length;
+    totPelis > 10 ? jQuery('.parrafoDescriptivo').append('<p>En total hay: ' + totPelis + ' películas</p>') : false;
+}
+
+
+/* preguntas desplegables */
+jQuery(".pregunta h3").click(function () {
+    jQuery(this).siblings(".respuesta").toggle();
+});
