@@ -362,8 +362,8 @@ jQuery('#btnComprar').click(function () {
 jQuery('.peliBoton').click(function () {
     Toastify({
         text: "¡Agregado al carrito!",
-        duration: 3000,
-        gravity: 'top',
+        duration: 2500,
+        gravity: 'bottom',
         position: 'right',
         style: {
             background: 'linear-gradient(to right, #b9090b, #000)'
