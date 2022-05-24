@@ -295,10 +295,10 @@ carrito.length === 0 && carritoVacio();
 let carritoLS = JSON.parse(localStorage.getItem('carrito')) || [];
 
 
-// if (jQuery('#containerPeliculas').length > 0) {
+
 totPelis = jQuery('#peliculasContainer .peli').length;
-totPelis > 9 ? jQuery('.parrafoDescriptivo').append('<p>En total hay: ' + totPelis + ' películas</p>') : false;
-// }
+totPelis > 9 ? jQuery('.parrafoDescriptivoPelis').append('<p>En total hay: ' + totPelis + ' películas</p>') : false;
+
 
 
 /* preguntas desplegables */
