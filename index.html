@@ -20,17 +20,32 @@
 
 <body>
     <div class="cart-wrapper" id="cart">
-        <Input href="#" id="closeCart" type="button" value="Cerrar">
+        <Input href="#" id="closeCart" type="button" value="Cerrar carrito">
         <h1>Carrito</h1>
         <h2 class="parrafoDescriptivo">¡Confirmá tu compra!</h2>
         <form class="carritoContainer">
+            <div class="campos" id="cliente">
+                <label for="pelisSeleccionadas">Película:</label>
+                <select class="agg" name="pelicula" id="pelisSeleccionadas" onchange="agregarPrecio()"></select>
+                <label for="precioSeleccionada">Precio:</label>
+                <input class="agg" type="text" id="precio" class="campoNumerico" disabled="">
+            </div>
+            <div class="containerBotones">
+                <button class="botones" onclick="agregarProducto()">Agregar</button>
+            </div>
+            <div class="containerBotones">
+                <button id="btnComprar">Comprar</button>
+            </div>
+        </form>
+        <h2 class="parrafoDescriptivo parrafoDescriptivoPadding">Calculá el monto final si vas a pagar en cuotas.</h2>
+        <form class="carritoContainer">
             <div class="campos">
                 <label for="precioLista">Precio de lista total:</label>
-                <input class="inputCarrito" type="text" name="precioLista" id="precioLista">
-                <label for="huboDemora">Hubo días de demora?:</label>
-                <input class="inputCarrito" class="huboDemora" type="text" placeholder="Si o no" id="huboDemora">
-                <label for="interes">Si hubo, ingrese el interés correspondiente a esos días:</label>
-                <input class="inputCarrito" type="text" name="interes" id="interes">
+                <input class="agg" type="text" name="precioLista" id="precioLista">
+                <label for="huboCuotas">Vas a pagar en cuotas?:</label>
+                <input class="agg" class="huboCuotas" type="text" placeholder="Si o no" id="huboCuotas">
+                <label for="interes">Si lo hiciste, ingrese el interés correspondiente:</label>
+                <input class="agg" type="text" name="interes" id="interes">
             </div>
             <div class="containerBotones">
                 <button id="limpiarBtn" class="botones" type="reset">Limpiar</button>
@@ -38,12 +53,9 @@
             </div>
             <div class="campos">
                 <label for="montoFinal">Monto final:</label>
-                <input class="inputCarrito" type="text" id="montoFinal">
+                <input class="agg" type="text" id="montoFinal">
                 <label for="ultmontoFinal">Último monto final calculado:</label>
-                <input class="inputCarrito" type="text" id="ultimomontoFinal">
-            </div>
-            <div class="containerBotones">
-                <button id="btnComprar">Comprar</button>
+                <input class="agg" type="text" id="ultimomontoFinal">
             </div>
         </form>
     </div>
@@ -61,7 +73,7 @@
                 <div class="collapse navbar-collapse fgrow" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="./index.html">Inicio</a>  <!-- pagActiva -->
+                            <a class="nav-link" href="./index.html">Inicio</a> <!-- pagActiva -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#peliculasTitulo">Películas</a>
@@ -77,12 +89,13 @@
                     <div class="navbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="./index.html">Inicio</a>  <!-- pagActiva -->
+                                <a class="nav-link" href="./index.html">Inicio</a> <!-- pagActiva -->
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#peliculasTitulo">Películas</a>
                             </li>
                             <li class="nav-item">
+<!-- FALTA QUE SE ABRA ACÁ TAMBIÉN -->
                                 <a href="#" class="nav-link" id="viewCart">Ver Carrito (<span
                                         class="cart-nav-produtcs">0</span> / $<span class="cart-nav-total">0</span>)</a>
                             </li>
@@ -129,7 +142,8 @@
             </div>
             <div id="peliculasTitulo"></div>
             <h1>Películas</h1> <!-- class="parpadea"-->
-            <h2 class="parrafoDescriptivo parrafoDescriptivoPelis">De momento tenemos estas películas disponibles en stock!</h2>
+            <h2 class="parrafoDescriptivo parrafoDescriptivoPelis">De momento tenemos estas películas disponibles en
+                stock!</h2>
             <div id="peliculasContainer" class="contenedorPeliculas"></div>
         </main>
         <footer>
@@ -165,6 +179,7 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/peliculas.js"></script>
 <script src="./js/main.js"></script>
 
 </html>

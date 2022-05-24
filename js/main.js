@@ -1,5 +1,6 @@
 class Pelicula {
-    constructor(imagenSrc, imagenAlt, nombre, genero, anio, precio) {
+    constructor(id, imagenSrc, imagenAlt, nombre, genero, anio, precio) {
+        this.id = id;
         this.imagenSrc = imagenSrc;
         this.imagenAlt = imagenAlt;
         this.nombre = nombre;
@@ -28,18 +29,18 @@ for (let i = maxAnio; i >= minAnio; i--) {
 const precio = [95, 100, 105];
 
 
-let TheUsualSuspects = new Pelicula("../images/peliculas/peli-1.jpg", "Foto de The Usual Suspects", "The Usual Suspects", genero[7], anio[27], precio[1]);
-let PulpFiction = new Pelicula("../images/peliculas/peli-2.jpg", "Foto de Pulp Fiction", "Pulp Fiction", genero[0], anio[28], precio[1]);
-let ElHijoDeLaNovia = new Pelicula("../images/peliculas/peli-3.jpg", "Foto de El hijo de la novia", "El hijo de la novia", genero[4], anio[21], precio[0]);
-let BigFish = new Pelicula("../images/peliculas/peli-4.jpg", "Foto de Big Fish", "Big Fish", genero[5], anio[19], precio[0]);
-let LoveActually = new Pelicula("../images/peliculas/peli-5.jpg", "Foto de Love Actually", "Love Actually", genero[3], anio[19], precio[0]);
-let ThereWillBeBlood = new Pelicula("../images/peliculas/peli-6.jpg", "Foto de There Will Be Blood", "There Will Be Blood", genero[4], anio[15], precio[0]);
-let LaSuerteEstaEchada = new Pelicula("../images/peliculas/peli-7.jpg", "Foto de La suerte está echada", "La suerte está echada", genero[3], anio[17], precio[0]);
-let Psycho = new Pelicula("../images/peliculas/peli-8.jpg", "Foto de Psycho", "Psycho", genero[7], anio[62], precio[2]);
-let TheHunt = new Pelicula("../images/peliculas/peli-9.jpg", "Foto de The Hunt", "The Hunt", genero[4], anio[10], precio[0]);
-let Whiplash = new Pelicula("../images/peliculas/peli-10.jpg", "Foto de Whiplash", "Whiplash", genero[4], anio[8], precio[0]);
-let LaDolceVita = new Pelicula("../images/peliculas/peli-11.jpg", "Foto de La dolce vita", "La dolce vita", genero[4], anio[62], precio[2]);
-let ForrestGump = new Pelicula("../images/peliculas/peli-12.jpg", "Foto de Forrest Gump", "Forrest Gump", genero[4], anio[28], precio[1]);
+let TheUsualSuspects = new Pelicula(1, "../images/peliculas/peli-1.jpg", "Foto de The Usual Suspects", "The Usual Suspects", genero[7], anio[27], precio[1]);
+let PulpFiction = new Pelicula(2, "../images/peliculas/peli-2.jpg", "Foto de Pulp Fiction", "Pulp Fiction", genero[0], anio[28], precio[1]);
+let ElHijoDeLaNovia = new Pelicula(3, "../images/peliculas/peli-3.jpg", "Foto de El hijo de la novia", "El hijo de la novia", genero[4], anio[21], precio[0]);
+let BigFish = new Pelicula(4, "../images/peliculas/peli-4.jpg", "Foto de Big Fish", "Big Fish", genero[5], anio[19], precio[0]);
+let LoveActually = new Pelicula(5, "../images/peliculas/peli-5.jpg", "Foto de Love Actually", "Love Actually", genero[3], anio[19], precio[0]);
+let ThereWillBeBlood = new Pelicula(6, "../images/peliculas/peli-6.jpg", "Foto de There Will Be Blood", "There Will Be Blood", genero[4], anio[15], precio[0]);
+let LaSuerteEstaEchada = new Pelicula(7, "../images/peliculas/peli-7.jpg", "Foto de La suerte está echada", "La suerte está echada", genero[3], anio[17], precio[0]);
+let Psycho = new Pelicula(8, "../images/peliculas/peli-8.jpg", "Foto de Psycho", "Psycho", genero[7], anio[62], precio[2]);
+let TheHunt = new Pelicula(9, "../images/peliculas/peli-9.jpg", "Foto de The Hunt", "The Hunt", genero[4], anio[10], precio[0]);
+let Whiplash = new Pelicula(10, "../images/peliculas/peli-10.jpg", "Foto de Whiplash", "Whiplash", genero[4], anio[8], precio[0]);
+let LaDolceVita = new Pelicula(11, "../images/peliculas/peli-11.jpg", "Foto de La dolce vita", "La dolce vita", genero[4], anio[62], precio[2]);
+let ForrestGump = new Pelicula(12, "../images/peliculas/peli-12.jpg", "Foto de Forrest Gump", "Forrest Gump", genero[4], anio[28], precio[1]);
 
 // ForrestGump.vender();
 // console.log(ForrestGump.vendido);
@@ -56,13 +57,19 @@ let isPeliculas = document.getElementsByClassName('contenedorPeliculas');
 if (isPeliculas.length > 0) {
     // elements with class "snake--mobile" exist
     arrayPeliculas.forEach(function (valor) {
-        let htmlPeli = `<div class="peli"><img loading="lazy" class="peliImg" src=` + valor.imagenSrc + ` alt=` + valor.imagenAlt + `><div class="peliBody"><h2 class="peliTit">` + valor.nombre + `</h2><p class="peliGenAn">` + valor.genero + ` - ` + valor.anio + `</p><div class="peliBts"><input class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>`
+        let htmlPeli = `<div class="peli"><img loading="lazy" class="peliImg" src=` + valor.imagenSrc + ` alt=` + valor.imagenAlt + `><div class="peliBody"><h2 class="peliTit">` + valor.nombre + `</h2><p class="peliGenAn">` + valor.genero + ` - ` + valor.anio + `</p><div class="peliBts"><input class="peliBoton" type="button" onclick="seleccionarPelicula(` + valor.id + `)" value="Agregar al carrito"></div></div></div>`
         // console.log('Salida del html armado dinámico:' + htmlPeli);
         document.getElementById("peliculasContainer").innerHTML += htmlPeli;
     });
 }
 
-
+function seleccionarPelicula(peliculaId) {
+    let posicion = $("#cliente").offset().top;
+    $("html, body").animate({
+        scrollTop: posicion
+    }, 1000);
+    $("#pelisSeleccionadas").val(peliculaId).change();
+}
 
 
 
@@ -180,15 +187,15 @@ function calcular2() {
     let precioLista = parseInt(document.getElementById('precioLista').value);
     if (precioLista > 0) {
         localStorage.setItem("precioLista", precioLista);
-        let huboDemora = document.getElementById('huboDemora').value;
-        if (huboDemora == "si" || huboDemora == "Si") {
+        let huboCuotas = document.getElementById('huboCuotas').value;
+        if (huboCuotas == "si" || huboCuotas == "Si") {
             let interes = parseInt(document.getElementById('interes').value);
             interesTot = (precioLista * interes) / 100;
             montoTot = precioLista + interesTot;
             document.getElementById("montoFinal").setAttribute('value', montoTot);
             localStorage.setItem("montoTot", montoTot);
 
-        } else if (huboDemora == "no" || huboDemora == "No") {
+        } else if (huboCuotas == "no" || huboCuotas == "No") {
             document.getElementById("montoFinal").setAttribute('value', precioLista);
             localStorage.setItem("montoTot", precioLista);
         } else {
@@ -227,19 +234,6 @@ if (isCarrito.length > 0) {
 // }
 
 
-
-
-
-/* click en agregar al carrito */
-
-function aggCarrito() {
-    alert("Agregado al carrito");
-}
-
-/* no anda porque el jQuery se hace aparte */
-// $(".peliBoton").click(function(){
-//     alert("Agregado al carrito.");
-// });
 
 
 
@@ -332,7 +326,7 @@ window.onload = function () {
 /* sweet alert */
 jQuery('#limpiarBtn').click(function () {
     Swal.fire({
-        title: 'Está seguro de limpiar este carrito?',
+        title: 'Está seguro de limpiar este cálculo?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Sí, seguro',
@@ -342,7 +336,7 @@ jQuery('#limpiarBtn').click(function () {
             Swal.fire({
                 title: 'Borrado!',
                 icon: 'success',
-                text: 'El carrito ha sido borrado'
+                text: 'El cálculo ha sido borrado'
             })
         }
     })
@@ -368,5 +362,148 @@ jQuery('.peliBoton').click(function () {
         style: {
             background: 'linear-gradient(to right, #b9090b, #000)'
         }
+        // ,
+        // onClick: () => {
+        //     /* QUE SE ABRA EL CARRITO */
+        // }
     }).showToast();
 })
+
+
+/* select del carrito */
+function cargarSelect(pelicula) {
+    var option = `<option value="${pelicula.id}">${pelicula.nombre}</option>`;
+    $("#pelisSeleccionadas").append(option);
+}
+arrayPeliculas.forEach(function (valor) {
+    let option = `<option value="` + valor.id + `">` + valor.nombre + `</option>`;
+    $("#pelisSeleccionadas").append(option);
+})
+
+/* precio del carrito */
+function agregarPrecio() {
+    var valor = $("#pelisSeleccionadas option:selected").val();
+    var encontrado = arrayPeliculas.find((pelicula) => {
+        return pelicula.id == valor;
+    });
+    $("#precio").val(encontrado.precio);
+    $("#cantidad").val("");
+    $("#subtotal").val("");
+}
+
+
+
+
+/*  */
+
+function agregarProducto() {
+    var cantidad = parseInt($("#cantidad").val());
+    if (cantidad > 0) {
+      $("#error").html("");
+      var itemId = parseInt($("#brebajes").val());
+  
+      var indiceYaExiste = pedido.items.findIndex((item) => {
+        return item.itemId == itemId;
+      });
+      if (indiceYaExiste == -1) {
+        pedido.items.push({ itemId, cantidad });
+      } else {
+        pedido.items[indiceYaExiste].cantidad += cantidad;
+      }
+      $("#cantidad").val("");
+      $("#subtotal").val("");
+      dibujarPedido();
+    } else {
+      $("#error").html("Debe ingresar cantidad");
+    }
+  }
+  
+  function dibujarPedido() {
+    var tablaHeader = `<table class="table table-hover table-dark finalizar-pedido">
+    <thead>
+      <tr class="items">
+        <th scope="col">#</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Subtotal</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>`;
+    var tablaBody = "";
+    var total = 0;
+    var iconoEliminar = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+      <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+    </svg>`;
+    pedido.items.forEach((item, indice) => {
+      var articulo = articulos.find((articulo) => {
+        return item.itemId == articulo.id;
+      });
+      tablaBody += `<tr>
+        <th scope="row">${indice + 1}</th>
+        <td>${articulo.nombre}</td>
+        <td>$${articulo.precio}</td>
+        <td>${item.cantidad}</td>
+        <td>$${parseInt(item.cantidad) * parseInt(articulo.precio)}</td>
+        <td><span class="icono-eliminar" onclick="eliminarItem(${indice})">${iconoEliminar}</span></td>
+      </tr>`;
+      total += parseInt(item.cantidad) * parseInt(articulo.precio);
+    });
+    var tablaFooter = `<tr>
+      <td colspan="3"></td>
+      <td class="total">TOTAL</td>
+      <td class="monto">$${total}</td>
+      <td></td>
+    </tr>
+    </tbody>
+    </table>`;
+    var formCliente = `<div class="row">
+        <div class="col-sm column-1">
+          Nombre y Apellido:
+        </div>
+        <div class="col-sm column-2">
+          <input class="field" type="text" name="name" id="name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm column-1">
+          Telefono:
+        </div>
+        <div class="col-sm column-2">
+          <input class="field" type="text" name="phone" id="phone" >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm column-1">
+          Dirección:
+        </div>
+        <div class="col-sm column-2">
+          <input class="field" type="text" name="adress" id="adress">
+        </div>
+      </div>
+      <div class="row" >
+        <div class="col-sm column-1">
+        </div>
+        <div class="col-sm column-2">
+          <div class="error" id="error-cliente"></div>
+          <button class="finalizar" onclick="finalizarPedido()">FINALIZAR PEDIDO</button>
+        </div>
+      </div>`;
+    if (pedido.items.length) {
+      $("#pedido-final").html(tablaHeader + tablaBody + tablaFooter);
+      if ($("#form-cliente").html() === "") {
+        $("#form-cliente").html(formCliente);
+      }
+    } else {
+      $("#pedido-final").html("");
+      $("#form-cliente").html("");
+    }
+  }
+  
+  function eliminarItem(indice) {
+    pedido.items.splice(indice, 1);
+    dibujarPedido();
+  }
+  
