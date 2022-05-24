@@ -11,7 +11,8 @@
 //     --negro: #000;
 // }
 
-$colorPrimario: #cb3234;        /* no lo uso */
+$colorPrimario: #cb3234;
+/* no lo uso */
 $colorSecundario: #b9090b;
 $colorBlanco: #e5e5e5;
 $colorNegroHF: #141414;
@@ -39,6 +40,33 @@ body {
     line-height: inherit;
     color: inherit;
 
+    div {
+        h1 {
+            width: 230px;
+            margin: 23px auto 20px auto;
+            color: $colorSecundario;
+            text-transform: uppercase;
+            font-size: 35px;
+            letter-spacing: 6px;
+            text-shadow: 0em 0.15em 0.15em $colorNegro;
+            text-align: center;
+
+            &:hover {
+                text-shadow: 0em 0.07em 0.07em $colorBlanco;
+            }
+        }
+
+        .parrafoDescriptivo {
+            color: $colorNegro;
+            text-align: center;
+            padding: 8px;
+            font-size: large;
+            margin-bottom: 13px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+
     .containercss {
         display: grid;
         grid-template-columns: 1fr;
@@ -61,7 +89,8 @@ body {
                 letter-spacing: 6px;
                 text-shadow: 0em 0.15em 0.15em $colorNegro;
                 text-align: center;
-                &:hover{
+
+                &:hover {
                     text-shadow: 0em 0.07em 0.07em $colorBlanco;
                 }
             }

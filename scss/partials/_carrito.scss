@@ -4,7 +4,7 @@
     @include flex(inherit, center);
     flex-direction: column;
     padding: 20px;
-    width: 60%;
+    width: 95%;
     margin: 0px auto 0px auto;
     @extend %contenedorNegro;
 
@@ -45,5 +45,54 @@
             width: 35%;
             @extend %botones;
         }
+
+        #btnComprar{
+            height: 50px;
+            margin: 25px 0 15px 0;
+            width: 60%;
+            @extend %botones;
+        }
     }
+}
+
+/* nav */
+.barnd {
+    border-radius: 50%;
+    max-width: 45px;
+    margin: 15px;
+}
+
+/* end nav */
+body {
+    overflow: hidden;
+    overflow-y: scroll;
+
+    -webkit-transition: all 0.333s linear;
+    -moz-transition: all 0.333s linear;
+    -o-transition: all 0.333s linear;
+    transition: all 0.333s linear;
+}
+
+/*body.view-cart .cart-wrapper,*/
+body.view-cart {
+    transform: translate(-30%);
+
+    -webkit-transition: all 0.333s linear;
+    -moz-transition: all 0.333s linear;
+    -o-transition: all 0.333s linear;
+    transition: all 0.333s linear;
+}
+
+.cart-wrapper {
+    position: absolute;
+    right: -30%;
+    height: 100%;
+    background-color: $colorGris;
+    // background: linear-gradient(top, $colorGris, $colorNegro);
+    width: 30%;
+
+    -webkit-transition: all 0.333s linear;
+    -moz-transition: all 0.333s linear;
+    -o-transition: all 0.333s linear;
+    transition: all 0.333s linear;
 }

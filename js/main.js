@@ -56,7 +56,7 @@ let isPeliculas = document.getElementsByClassName('contenedorPeliculas');
 if (isPeliculas.length > 0) {
     // elements with class "snake--mobile" exist
     arrayPeliculas.forEach(function (valor) {
-        let htmlPeli = `<div class="peli"><img loading="lazy" class="peliImg" src=` + valor.imagenSrc + ` alt=` + valor.imagenAlt + `><div class="peliBody"><h2 class="peliTit">` + valor.nombre + `</h2><p class="peliGenAn">` + valor.genero + ` - ` + valor.anio + `</p><div class="peliBts"><input onclick="aggCarrito()" class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>`
+        let htmlPeli = `<div class="peli"><img loading="lazy" class="peliImg" src=` + valor.imagenSrc + ` alt=` + valor.imagenAlt + `><div class="peliBody"><h2 class="peliTit">` + valor.nombre + `</h2><p class="peliGenAn">` + valor.genero + ` - ` + valor.anio + `</p><div class="peliBts"><input class="peliBoton" type="button" value="Agregar al carrito"></div></div></div>`
         // console.log('Salida del html armado dinámico:' + htmlPeli);
         document.getElementById("peliculasContainer").innerHTML += htmlPeli;
     });
@@ -295,13 +295,78 @@ carrito.length === 0 && carritoVacio();
 let carritoLS = JSON.parse(localStorage.getItem('carrito')) || [];
 
 
-if (jQuery('#containerPeliculas').length > 0) {
-    totPelis = jQuery('#peliculasContainer .peli').length;
-    totPelis > 10 ? jQuery('.parrafoDescriptivo').append('<p>En total hay: ' + totPelis + ' películas</p>') : false;
-}
+// if (jQuery('#containerPeliculas').length > 0) {
+totPelis = jQuery('#peliculasContainer .peli').length;
+totPelis > 9 ? jQuery('.parrafoDescriptivo').append('<p>En total hay: ' + totPelis + ' películas</p>') : false;
+// }
 
 
 /* preguntas desplegables */
 jQuery(".pregunta h3").click(function () {
     jQuery(this).siblings(".respuesta").toggle();
 });
+
+
+
+/* ver carrito */
+window.onload = function () {
+
+    let body = document.getElementsByTagName('body');
+    let cartRight = document.getElementById('cart');
+    let botCart = document.getElementById('viewCart');
+    let closeCart = document.getElementById('closeCart');
+    botCart.onclick = function (e) {
+        e.preventDefault();
+        // e.target.classList.toggle("view-cart");
+        body[0].classList.toggle("view-cart");
+        // console.log("clickeron en botCart");
+    }
+    closeCart.onclick = function (e) {
+        e.preventDefault();
+        body[0].classList.toggle("view-cart");
+    }
+
+}
+
+
+/* sweet alert */
+jQuery('#limpiarBtn').click(function () {
+    Swal.fire({
+        title: 'Está seguro de limpiar este carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, seguro',
+        cancelButtonText: 'No, no quiero'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Borrado!',
+                icon: 'success',
+                text: 'El carrito ha sido borrado'
+            })
+        }
+    })
+})
+
+jQuery('#btnComprar').click(function () {
+    Swal.fire({
+        title: 'Genial!',
+        text: 'Tu compra se ha realizado con éxito!',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+    })
+})
+
+
+/* toastify */
+jQuery('.peliBoton').click(function () {
+    Toastify({
+        text: "¡Agregado al carrito!",
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+        style: {
+            background: 'linear-gradient(to right, #b9090b, #000)'
+        }
+    }).showToast();
+})

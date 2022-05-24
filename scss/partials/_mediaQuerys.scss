@@ -7,6 +7,14 @@
 }
 
 @media screen and (max-width: 768px) {
+    div {
+        h1 {
+            font-size: 30px !important;
+            padding: 6px;
+            margin: 17px auto 11px auto !important;
+        }
+    }
+
     main {
         margin-left: 5% !important;
         margin-right: 5% !important;
@@ -44,7 +52,7 @@
     }
 
     footer {
-        margin-top: 20px;
+        margin-top: 77px;
     }
 }
 

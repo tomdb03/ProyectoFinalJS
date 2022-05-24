@@ -5,7 +5,52 @@ footer {
     background-color: $colorNegroHF;
     background: $fondoNegro;
     width: 100%;
-    margin-top: 35px;
+    margin-top: 97px;
+}
+
+.redes {
+
+    @include flex(center, center);
+    padding-top: 35px;
+
+    ul {
+        padding: 0;
+        width: 35%;
+        @include flex(space-evenly, center);
+
+        .btn-tw {
+            background: map-get($coloresRedes, twitter);
+            color: $colorBlanco;
+            @extend %redesDet;
+
+            &:hover {
+                background-color: $colorBlanco;
+                color: map-get($coloresRedes, twitter) !important;
+            }
+        }
+
+        .btn-fb {
+            background: map-get($coloresRedes, facebook);
+            color: $colorBlanco;
+            @extend %redesDet;
+
+            &:hover {
+                background-color: $colorBlanco;
+                color: map-get($coloresRedes, facebook) !important;
+            }
+        }
+
+        .btn-ig {
+            background: map-get($coloresRedes, instagram);
+            color: $colorBlanco;
+            @extend %redesDet;
+
+            &:hover {
+                background-color: $colorBlanco;
+                color: map-get($coloresRedes, instagram) !important;
+            }
+        }
+    }
 }
 
 .btn-wsp {
