@@ -17,6 +17,7 @@
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
+<!-- RESPONSIVE -->
 
 <body>
     <div class="cart-wrapper" id="cart">
@@ -28,14 +29,21 @@
                 <label for="pelisSeleccionadas">Película:</label>
                 <select class="agg" name="pelicula" id="pelisSeleccionadas" onchange="agregarPrecio()"></select>
                 <label for="precioSeleccionada">Precio:</label>
-                <input class="agg" type="text" id="precio" class="campoNumerico" disabled="">
+                <input class="agg" type="text" id="precio">
+                <label for="cantidad">Cantidad:</label>
+                <input class="agg" type="text" id="cantidad" onkeyup="calcularSubtotal()">
+                <label for="total">Subtotal:</label>
+                <input class="agg" type="text" id="subtotal" disabled>
             </div>
+            <div class="error" id="error"></div>
+            <!-- <div class="containerBotones">
+                <button class="botones" onclick="agregarPelicula()">Agregar</button>
+            </div> -->
             <div class="containerBotones">
-                <button class="botones" onclick="agregarProducto()">Agregar</button>
+                <button id="btnComprar" onclick="comprar(); return false;">Comprar</button>
             </div>
-            <div class="containerBotones">
-                <button id="btnComprar">Comprar</button>
-            </div>
+            <div class="exito" id="comprado"></div>
+            <div class="error" id="error5"></div>
         </form>
         <h2 class="parrafoDescriptivo parrafoDescriptivoPadding">Calculá el monto final si vas a pagar en cuotas.</h2>
         <form class="carritoContainer">
@@ -47,9 +55,12 @@
                 <label for="interes">Si lo hiciste, ingrese el interés correspondiente:</label>
                 <input class="agg" type="text" name="interes" id="interes">
             </div>
+            <div class="error" id="error2"></div>
+            <div class="error" id="error3"></div>
+            <div class="error" id="error4"></div>
             <div class="containerBotones">
-                <button id="limpiarBtn" class="botones" type="reset">Limpiar</button>
-                <button class="botones" onclick="calcular2(); return false;">Calcular</button>
+                <button class="botones" type="reset">Limpiar</button>   <!-- id="limpiarBtn"-->
+                <button class="botones" onclick="calcular(); return false;">Calcular</button>
             </div>
             <div class="campos">
                 <label for="montoFinal">Monto final:</label>
@@ -79,8 +90,7 @@
                             <a class="nav-link" href="#peliculasTitulo">Películas</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" id="viewCart">Ver Carrito (<span
-                                    class="cart-nav-produtcs">0</span> / $<span class="cart-nav-total">0</span>)</a>
+                            <a href="#" class="nav-link" id="viewCart">Ver Carrito</a>
                         </li>
                     </ul>
                 </div>
@@ -95,9 +105,8 @@
                                 <a class="nav-link" href="#peliculasTitulo">Películas</a>
                             </li>
                             <li class="nav-item">
-<!-- FALTA QUE SE ABRA ACÁ TAMBIÉN -->
-                                <a href="#" class="nav-link" id="viewCart">Ver Carrito (<span
-                                        class="cart-nav-produtcs">0</span> / $<span class="cart-nav-total">0</span>)</a>
+                                <!-- FALTA QUE SE ABRA ACÁ TAMBIÉN -->
+                                <a href="#" class="nav-link" id="viewCart">Ver Carrito</a>
                             </li>
                         </ul>
                     </div>
@@ -179,7 +188,6 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="./js/jquery-3.6.0.min.js"></script>
-<script src="./js/peliculas.js"></script>
 <script src="./js/main.js"></script>
 
 </html>

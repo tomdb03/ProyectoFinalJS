@@ -33,6 +33,20 @@
         }
     }
 
+    .error{
+        color: $colorSecundario;
+        font-size: larger;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .exito{
+        color: map-get($coloresRedes, whatsApp);
+        font-size: larger;
+        font-weight: bold;
+        text-align: center;
+    }
+
     .containerBotones {
         @include flex(space-evenly, center);
         flex-direction: row;
