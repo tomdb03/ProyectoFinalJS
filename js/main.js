@@ -76,6 +76,15 @@ class Pelicula {
 
 
 /* traigo datos desde el JSON (lo hago que abarque todo lo que toque películas porque requiere que se cargue al mismo tiempo si o sí, y no después) */
+
+// no utilicé fetch porque de esta manera que use me resultó más práctica para obtener el mismo resultado
+
+// let urlJson = 'http://127.0.0.1:5502/peliculas.json';
+// fetch(urlJson)
+//     .then(response => response.json())
+//     .then(data => mostrarData(data))
+//     .catch(error => console.log(error))
+
 let arrayPeliculas = [];
 jQuery.getJSON('peliculas.json', function (data) {
     jQuery.each(data, function (index, pelicula) {
@@ -178,13 +187,13 @@ function calcularSubtotal() {
 /* terminos y condiciones (aplico AJAX) */
 function ajax(){
     const http = new XMLHttpRequest();
-    const url = 'http://127.0.0.1:5502/terminos.html';
+    const urlTerminos = 'http://127.0.0.1:5502/terminos.html';
     http.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             document.getElementById("response").innerHTML = this.responseText;
         }
     }
-    http.open("GET", url);
+    http.open("GET", urlTerminos);
     http.send();
 }
 document.getElementById("terminos").addEventListener("click", function(){
