@@ -175,6 +175,25 @@ function calcularSubtotal() {
     }
 }
 
+/* terminos y condiciones (aplico AJAX) */
+function ajax(){
+    const http = new XMLHttpRequest();
+    const url = 'http://127.0.0.1:5502/terminos.html';
+    http.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            document.getElementById("response").innerHTML = this.responseText;
+        }
+    }
+    http.open("GET", url);
+    http.send();
+}
+document.getElementById("terminos").addEventListener("click", function(){
+    ajax();
+})
+function cerrarTerminos(){
+    document.getElementById("response").innerHTML ="";
+}
+
 /* botón confirmar compra */
 function comprar() {
     if (parseInt(document.getElementById('subtotal').value) > 0) {

@@ -31,16 +31,22 @@
             text-align: center;
             width: 100%;
         }
+
+        #response {
+            color: $colorGris;
+            font-size: small;
+            text-align: center;
+        }
     }
 
-    .error{
+    .error {
         color: $colorSecundario;
         font-size: larger;
         font-weight: bold;
         text-align: center;
     }
 
-    .exito{
+    .exito {
         color: map-get($coloresRedes, whatsApp);
         font-size: larger;
         font-weight: bold;
@@ -112,5 +118,14 @@ body.view-cart {
 
     .parrafoDescriptivoPadding {
         padding-top: 48px;
+    }
+}
+
+.cerrarTerminos {
+    font-weight: bolder;
+    cursor: pointer;
+
+    &:hover {
+        color: $colorSecundario;
     }
 }

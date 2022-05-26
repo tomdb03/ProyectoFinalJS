@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
-<!-- RESPONSIVE -->
+<!-- FALTA RESPONSIVE -->
 
 <body>
     <div class="cart-wrapper" id="cart">
@@ -34,6 +34,9 @@
                 <input class="agg" type="text" id="cantidad" onkeyup="calcularSubtotal()">
                 <label for="total">Subtotal:</label>
                 <input class="agg" type="text" id="subtotal" disabled>
+                <label for="terminos"><a id="terminos">Términos y condiciones</a> (al clickear comprar los
+                    estás aceptando)</label>
+                <div id="response"></div>
             </div>
             <div class="error" id="error"></div>
             <!-- <div class="containerBotones">
@@ -59,7 +62,7 @@
             <div class="error" id="error3"></div>
             <div class="error" id="error4"></div>
             <div class="containerBotones">
-                <button class="botones" type="reset">Limpiar</button>   <!-- id="limpiarBtn"-->
+                <button class="botones" type="reset">Limpiar</button> <!-- id="limpiarBtn"-->
                 <button class="botones" onclick="calcular(); return false;">Calcular</button>
             </div>
             <div class="campos">
